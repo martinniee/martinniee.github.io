@@ -1,0 +1,289 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>centOS | VMware安装使用centos虚拟机 | ocean</title><meta name="keywords" content="环境配置,Linux,Centos"><meta name="author" content="Martin niee"><meta name="copyright" content="Martin niee"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="VMware安装centos7虚拟机网络连接模式  桥接模式 NAT模式 仅主机模式 自定义模式     模式 描述    桥接模式    NAT模式    仅主机模式    自定义模式     硬件的基本要求 CPU : Pentium 或更高性能处理器 内存:对于x86,AMD64&#x2F;Inter64 和Itanium2架构的主机，至少要要求 512m内存，对于IBM Power 系列，至少需要1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="centOS | VMware安装使用centos虚拟机">
+<meta property="og:url" content="http://martinniee.top/2020/06/23/VMware%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Linux(centos%E8%99%9A%E6%8B%9F%E6%9C%BA)/index.html">
+<meta property="og:site_name" content="ocean">
+<meta property="og:description" content="VMware安装centos7虚拟机网络连接模式  桥接模式 NAT模式 仅主机模式 自定义模式     模式 描述    桥接模式    NAT模式    仅主机模式    自定义模式     硬件的基本要求 CPU : Pentium 或更高性能处理器 内存:对于x86,AMD64&#x2F;Inter64 和Itanium2架构的主机，至少要要求 512m内存，对于IBM Power 系列，至少需要1">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200626090932988.png">
+<meta property="article:published_time" content="2020-06-23T06:49:07.000Z">
+<meta property="article:modified_time" content="2020-06-23T06:49:07.000Z">
+<meta property="article:author" content="Martin niee">
+<meta property="article:tag" content="环境配置">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Centos">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200626090932988.png"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://martinniee.top/2020/06/23/VMware%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Linux(centos%E8%99%9A%E6%8B%9F%E6%9C%BA)/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '4.2.0',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":30,"languages":{"author":"作者: Martin niee","link":"链接: ","source":"来源: ocean","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: {"text":"富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善","fontSize":"15px"},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: true
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2020-06-23 14:49:07'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><link rel="stylesheet" href="/css/tag.css"><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@latest/butterfly/css/tags.css"><meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">17</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">19</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-tasks"></i><span> 检索</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-bookmark"></i><span> 分类</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/archives/"><i class="fa-fw fas fa-folder-open"></i><span> 时间轴</span></a></li><li><a class="site-page" href="/history/"><i class="fa-fw fas fa-history"></i><span> 修改历史</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fas fa-location-arrow"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/moment/"><i class="fa-fw fas fa-comments"></i><span> 瞬间</span></a></div><div class="menus_item"><a class="site-page" href="/memo/"><i class="fa-fw fas fa-bookmark"></i><span> 备忘录</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书籍</span></a></li><li><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 相册</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/box/"><i class="fa-fw fas fa-compass"></i><span> 网址导航</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#VMware安装centos7虚拟机"><span class="toc-number">1.</span> <span class="toc-text">VMware安装centos7虚拟机</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#硬件的基本要求"><span class="toc-number">1.1.</span> <span class="toc-text">硬件的基本要求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用-VMware虚拟机安装centos-7"><span class="toc-number">1.2.</span> <span class="toc-text">使用 VMware虚拟机安装centos 7</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#step-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">step 1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#step2"><span class="toc-number">1.2.2.</span> <span class="toc-text">step2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#step3"><span class="toc-number">1.2.3.</span> <span class="toc-text">step3</span></a></li></ol></li></ol></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://img-blog.csdnimg.cn/20200626090932988.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ocean</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-tasks"></i><span> 检索</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-bookmark"></i><span> 分类</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/archives/"><i class="fa-fw fas fa-folder-open"></i><span> 时间轴</span></a></li><li><a class="site-page" href="/history/"><i class="fa-fw fas fa-history"></i><span> 修改历史</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fas fa-location-arrow"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/moment/"><i class="fa-fw fas fa-comments"></i><span> 瞬间</span></a></div><div class="menus_item"><a class="site-page" href="/memo/"><i class="fa-fw fas fa-bookmark"></i><span> 备忘录</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书籍</span></a></li><li><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 相册</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/box/"><i class="fa-fw fas fa-compass"></i><span> 网址导航</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">centOS | VMware安装使用centos虚拟机</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-06-23T06:49:07.000Z" title="发表于 2020-06-23 14:49:07">2020-06-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-06-23T06:49:07.000Z" title="更新于 2020-06-23 14:49:07">2020-06-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%AD/">学习中</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">926</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2 id="VMware安装centos7虚拟机"><a href="#VMware安装centos7虚拟机" class="headerlink" title="VMware安装centos7虚拟机"></a>VMware安装centos7虚拟机</h2><p><strong>网络连接模式</strong></p>
+<ul>
+<li>桥接模式</li>
+<li>NAT模式</li>
+<li>仅主机模式</li>
+<li>自定义模式</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>桥接模式</td>
+<td></td>
+</tr>
+<tr>
+<td>NAT模式</td>
+<td></td>
+</tr>
+<tr>
+<td>仅主机模式</td>
+<td></td>
+</tr>
+<tr>
+<td>自定义模式</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><img src="https://img-blog.csdnimg.cn/20200622111858978.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="硬件的基本要求"><a href="#硬件的基本要求" class="headerlink" title="硬件的基本要求"></a>硬件的基本要求</h3><ul>
+<li>CPU : Pentium 或更高性能处理器</li>
+<li>内存:对于x86,AMD64/Inter64 和Itanium2架构的主机，至少要要求 <code>512m</code>内存，对于IBM Power 系列，至少需要<code>1GB</code>内存</li>
+<li>硬盘:至少<code>1GB</code>磁盘空间</li>
+<li>显卡:VGA兼容显卡</li>
+</ul>
+<blockquote>
+<p>使用<a href="http://x.xunlei.com/" target="_blank" rel="noopener">迅雷</a>下载<a href="http://mirrors.163.com/centos/7.6.1810/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso" target="_blank" rel="noopener">iso镜像文件</a></p>
+</blockquote>
+<h3 id="使用-VMware虚拟机安装centos-7"><a href="#使用-VMware虚拟机安装centos-7" class="headerlink" title="使用 VMware虚拟机安装centos 7"></a>使用 <code>VMware</code>虚拟机安装centos 7</h3><p>VMware版本 : <code>VMware Workstation 12 pro</code></p>
+<h4 id="step-1"><a href="#step-1" class="headerlink" title="step 1"></a><strong>step 1</strong></h4><p>安装虚拟机软件VMware Workstation </p>
+<blockquote>
+<p>这个安装比较简单</p>
+</blockquote>
+<h4 id="step2"><a href="#step2" class="headerlink" title="step2"></a><strong>step2</strong></h4><p>创建<code>centos7</code> 虚拟机<br><img src="https://img-blog.csdnimg.cn/20200623125633692.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200623125710429.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>典型安装与自定义安装</strong></p>
+<ul>
+<li><strong>典型 :</strong> VMware会将主流的配置应用在虚拟机上，队新手友好</li>
+<li><strong>自定义:</strong> 可以有针对性的选择，把一些资源加强，把不需要的资源删除，避免浪费资源</li>
+</ul>
+<p>选择【自定义】<br>点击【下一步】<br><img src="https://img-blog.csdnimg.cn/20200623125813305.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><strong>这里要注意兼容性，高版本的VMware创建的虚拟机到低版本的虚拟机使用会出现不兼容现象</strong></p>
+<p>如 <code>VMware 12</code>创建的虚拟机复制到<code>VMware 10</code>或更低版本，不兼容</p>
+<p>如 <code>VMware 10</code>或低版本到<code>VMware12</code>打开则不会出现兼容问题</p>
+<p>点击【下一步】<br><img src="https://img-blog.csdnimg.cn/20200623125855767.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>选择【稍后安装】<br>点击【下一步】<br><img src="https://img-blog.csdnimg.cn/20200623130146813.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>点击【下一步】<br><img src="https://img-blog.csdnimg.cn/20200623130309864.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ul>
+<li><strong>虚拟机命名</strong> : 在虚拟机多的情况下，容易找到</li>
+<li><strong>VMware储存位置</strong> ： 默认是c盘，可以改其它盘</li>
+</ul>
+<p>点击【下一步】<br><img src="https://img-blog.csdnimg.cn/20200623130518234.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>处理器分配要和实际的需求有关，如果过程中<code>CPU</code>不够使用，是不可以再增加的，这里默认<br>点击【下一步】</p>
+<p><img src="https://img-blog.csdnimg.cn/20200623132147628.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>内存也是要根据实际的需求分配的，<img src="https://img-blog.csdnimg.cn/20200623132014536.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>此时电脑的内存是<code>8G</code>，所以分配<code>2G</code><br>点击【下一步】</p>
+<p><strong>网络连接</strong></p>
+<ul>
+<li>桥接</li>
+<li>NAT:</li>
+<li>仅主机</li>
+</ul>
+<p><strong>桥接 :</strong> 选择桥接，虚拟机和宿主机再网络上是平级的，相当于连接在同一交换机上</p>
+<p>桥连接 ，linux可以和其它系统通信，但是可能会造成<code>ip冲突</code><br><img src="https://img-blog.csdnimg.cn/20200623133454497.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>NAT</strong> : 就是虚拟机要联网需要通过宿主机才能和外面联网</p>
+<p>NAT , 网络转换方式，linux可以访问外网，不会造成<code>ip冲突</code></p>
+<p><img src="https://img-blog.csdnimg.cn/20200623134001880.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><strong>仅主机</strong> : 就是虚拟机直接和宿主机连接起来</p>
+<p>你的linux是一个独立的主机，不能访问外网</p>
+<p>这里选择【桥连接】<br>【下一步】<br><img src="https://img-blog.csdnimg.cn/20200623135136692.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>其余两项默认即可</p>
+<p>【下一步】<br>【下一步】<br><img src="https://img-blog.csdnimg.cn/20200623135300785.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>【下一步】<br><img src="https://img-blog.csdnimg.cn/20200623135639114.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>磁盘容量暂时分配<code>20G</code> ，不要选择【立即分配所有磁盘】，这样会立即分配给centos，导致宿主机硬盘容量减少</p>
+<p>这个<code>20G</code>表示，最多可用20G<br>【下一步】<br><img src="https://img-blog.csdnimg.cn/20200623135707698.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>磁盘名称，默认即可<br>【下一步】<br><img src="https://img-blog.csdnimg.cn/20200623135811196.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>取消不需要的硬件<br><img src="https://img-blog.csdnimg.cn/2020062313584913.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200623135919654.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>然后点击【完成】<br><img src="https://img-blog.csdnimg.cn/20200623140014420.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<hr>
+<h4 id="step3"><a href="#step3" class="headerlink" title="step3"></a><strong>step3</strong></h4><p>安装 <code>centOS 7</code></p>
+<p>右击新建的虚拟机，选择【设置】<br><img src="https://img-blog.csdnimg.cn/20200623140302514.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>选择使用<code>iso</code>映像文件，【启动时连接】一定要勾选上<br>，然后【确定】<br><img src="https://img-blog.csdnimg.cn/20200623140600285.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>开启虚拟机<br><img src="https://img-blog.csdnimg.cn/20200623140654839.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200623144011923.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>鼠标点击屏幕，待鼠标光标消失后，移动键盘的方向键，选择<code>第一项</code><br><img src="https://img-blog.csdnimg.cn/20200623140852877.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200623141003937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>选择语言，这里使用中文<br><img src="https://img-blog.csdnimg.cn/20200623141115327.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>首先设置时间</strong><br><img src="https://img-blog.csdnimg.cn/20200623141320350.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>选择安装的软件</strong><br><img src="https://img-blog.csdnimg.cn/20200623141432725.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200623141533672.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>选择安装位置，可以进行磁盘划分</strong><br><img src="https://img-blog.csdnimg.cn/20200623141632370.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200623141702398.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>如下图<br><img src="https://img-blog.csdnimg.cn/20200623141833658.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>按同样方法设置下面两个<br><img src="https://img-blog.csdnimg.cn/20200623142223223.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>点击【完成】</p>
+<p><img src="https://img-blog.csdnimg.cn/20200623142358261.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>点击【接收更改】</p>
+<p><strong>设置主机名和网卡信息</strong><br><img src="https://img-blog.csdnimg.cn/20200623142448493.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>首先</p>
+<ul>
+<li>打开网卡</li>
+<li>查看是否能获取 <code>IP地址</code></li>
+<li>更改主机名</li>
+<li>点击【完成】<br><img src="https://img-blog.csdnimg.cn/20200623142824158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>选择【开始安装】<br><img src="https://img-blog.csdnimg.cn/20200623142910513.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+</ul>
+<p><strong>设置root密码</strong><br><img src="https://img-blog.csdnimg.cn/20200623143207961.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200623143025364.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>创建管理员用户</strong><br><img src="https://img-blog.csdnimg.cn/20200623143222249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200623143141658.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>等待系统安装即可…..<br><img src="https://img-blog.csdnimg.cn/20200623144433379.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200623144508896.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>然后输入密码</p>
+<p>进入图形界面<br><img src="https://img-blog.csdnimg.cn/20200623144724552.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0OTk0ODQy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>参考教程 <a href="https://www.runoob.com/w3cnote/vmware-install-centos7.html" target="_blank" rel="noopener">VMware 安装 Centos7 超详细过程</a></p>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css"></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Martin niee</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://martinniee.top/2020/06/23/VMware%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Linux(centos%E8%99%9A%E6%8B%9F%E6%9C%BA)/">http://martinniee.top/2020/06/23/VMware安装使用Linux(centos虚拟机)/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://martinniee.top" target="_blank">ocean</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a><a class="post-meta__tags" href="/tags/Linux/">Linux</a><a class="post-meta__tags" href="/tags/Centos/">Centos</a></div><div class="post_share"><div class="social-share" data-image="https://img-blog.csdnimg.cn/20200626090932988.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/img/wechat.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/06/24/pycharm%E8%BF%9E%E6%8E%A5Github/"><img class="prev-cover" src="https://img-blog.csdnimg.cn/2020062609082233.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Git | git-玩转github</div></div></a></div><div class="next-post pull-right"><a href="/2020/05/01/mv/"><img class="next-cover" src="https://img-blog.csdnimg.cn/20200501202027549.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">mv</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/01/28/Python之anaconda下载安装/" title="Python | 安装python ananconda环境"><img class="cover" src="https://img-blog.csdnimg.cn/20200309214434662.png"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-01-28</div><div class="title">Python | 安装python ananconda环境</div></div></a></div><div><a href="/2021/01/28/Python之配置yupyter_notebook/" title="python | 安装jupyter notebook"><img class="cover" src="https://img-blog.csdnimg.cn/20200309214323829.png"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-01-28</div><div class="title">python | 安装jupyter notebook</div></div></a></div><div><a href="/2020/09/26/HEXO_butterflyTheme配置大合集/" title="Hexo | hexo-butterfly主题配置大合集"><img class="cover" src="https://cdn.jsdelivr.net/gh/martinniee/hexoBlogImg/img/1601124712852.jpeg"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-26</div><div class="title">Hexo | hexo-butterfly主题配置大合集</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></article></main><footer id="footer" style="background-image: url(https://img-blog.csdnimg.cn/20200626090932988.png)"><div id="footer-wrap"><div class="framework-info"><span>框架 </span><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener">Butterfly</a></div><div class="footer_custom_text">best years of our lives</div><div class="timeDate"><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    $.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js', function () {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script><script>function loadValine () {
+  function initValine () {
+    const initData = {
+      el: '#vcomment',
+      appId: '0uv3dwMCwEi7bSJoXUF2yLKd-MdYXbMMI',
+      appKey: '7oGs8W6W6L5oJfiy9Hen31mj',
+      placeholder: '输入QQ号可自动获取昵称!',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: true,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script src="/js/ip_content.js"></script><script src="/js/timeDate.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" async="async" mobile="true"></script></div></body></html>
