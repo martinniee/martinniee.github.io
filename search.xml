@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>给hexo博客添加douban读书页</title>
+      <link href="2021/03/27/%E7%BB%99hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0douban%E8%AF%BB%E4%B9%A6%E9%A1%B5/"/>
+      <url>2021/03/27/%E7%BB%99hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0douban%E8%AF%BB%E4%B9%A6%E9%A1%B5/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>爬取 个人豆瓣网页，嵌入到 个人博客页面</p><p><strong>准备:</strong></p><ul><li>注册/登录 <a href="https://www.douban.com" target="_blank" rel="noopener">豆瓣</a> </li><li>搜索书籍，选择 「想读」或 「在读」 或 「读过」，生成读书记录</li><li>豆瓣ID , 进入主页，浏览器网址栏的<code>https://www.douban.com/people/xxxxxxxxx/</code> 的 xxxxxxxxx 就是</li></ul><h2 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h2><p>git bash中</p><p><strong>1、安装依赖模块</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-douban --save</span><br></pre></td></tr></table></figure><p><strong>2、博客站点根目录下的 <code>_config.yml</code> 文件中添加</strong></p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">douban:</span></span><br><span class="line">  <span class="attr">user:</span> <span class="string">XXXXXXX</span></span><br><span class="line">  <span class="attr">builtin:</span> <span class="literal">false</span> <span class="comment"># 选择是否有主题渲染</span></span><br><span class="line">  <span class="attr">book:</span></span><br><span class="line">    <span class="attr">title:</span> <span class="string">'This is my book title'</span></span><br><span class="line">    <span class="attr">quote:</span> <span class="string">'This is my book quote'</span></span><br><span class="line">  <span class="attr">movie:</span></span><br><span class="line">    <span class="attr">title:</span> <span class="string">'This is my movie title'</span></span><br><span class="line">    <span class="attr">quote:</span> <span class="string">'This is my movie quote'</span></span><br><span class="line">  <span class="attr">game:</span></span><br><span class="line">    <span class="attr">title:</span> <span class="string">'This is my game title'</span></span><br><span class="line">    <span class="attr">quote:</span> <span class="string">'This is my game quote'</span></span><br><span class="line">  <span class="attr">timeout:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure><p>参数说明:</p><table><thead><tr><th>参数</th><th>说明</th></tr></thead><tbody><tr><td>user</td><td>你的豆瓣 id</td></tr><tr><td>builtin</td><td>（true/false）是否将生成页面的功能嵌入hexo s和hexo g中</td></tr><tr><td>title</td><td>该页面的标题</td></tr><tr><td>quote</td><td>写在页面开头的一段话,支持html语法.</td></tr><tr><td>timeout</td><td>爬取数据的超时时间</td></tr></tbody></table><p>⚠️默认为 <code>false</code>, 如果不设置 <code>builtin 为 true</code> ,则页面渲染不了</p><p><strong>3、启动生成</strong></p><p><code>-bgm</code>代表的是<code>book、game、movie</code>三个参数，选择你需要生成的页面。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo douban -bgm &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure><p>查看<code>http://localhost:4000/books</code>或者<code>http://localhost:4000/movies</code>测试（出现相应内容即配置成功）。</p><p>另外，修改你的<code>主题</code>配置<code>_config.xml</code>，我这里是butterfly.yml，配置到目录；如果有中英文设置，相应配置即可，不唯一。</p><p><strong>4、部署</strong></p><p>⚠️强调：由于<code>hexo douban</code>的简写也是<code>hexo d</code>，与<code>hexo deploy</code>的简写指令<code>hexo d</code>冲突，因此在进行二者部署的时候，只能都打全名而不能打简写形式。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure><p><strong>6、如果你是butterfly主题，可以配置封面页哦：</strong></p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果你有使用hexo-douban，可配置這個</span></span><br><span class="line"><span class="attr">douban:</span></span><br><span class="line">   <span class="attr">meta:</span> <span class="literal">true</span></span><br><span class="line">   <span class="attr">movies_img:</span> <span class="string">/image/movie.jpg</span></span><br><span class="line">   <span class="attr">books_img:</span> <span class="string">/image/book.jpg</span></span><br><span class="line"><span class="comment">#   games_img:</span></span><br></pre></td></tr></table></figure><p>参考:</p><ul><li><a href="https://blog.csdn.net/cungudafa/article/details/105773983" target="_blank" rel="noopener">hexo美化（豆瓣阅读、电影、常用网站搜索页）</a></li></ul><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+      
+      
+      <categories>
+          
+          <category> 技 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 豆瓣 </tag>
+            
+            <tag> hexo </tag>
+            
+            <tag> butterfly </tag>
+            
+            <tag> 读书 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Github访问不了或者不稳定处理 | github</title>
       <link href="2021/03/27/Github%E8%AE%BF%E9%97%AE%E4%B8%8D%E4%BA%86%E6%88%96%E8%80%85%E4%B8%8D%E7%A8%B3%E5%AE%9A%E5%A4%84%E7%90%86-github/"/>
       <url>2021/03/27/Github%E8%AE%BF%E9%97%AE%E4%B8%8D%E4%BA%86%E6%88%96%E8%80%85%E4%B8%8D%E7%A8%B3%E5%AE%9A%E5%A4%84%E7%90%86-github/</url>
@@ -132,9 +163,9 @@
       
         <tags>
             
-            <tag> mv </tag>
-            
             <tag> Elizabeth jane bishop </tag>
+            
+            <tag> mv </tag>
             
         </tags>
       
@@ -159,9 +190,9 @@
       
         <tags>
             
-            <tag> avril lavigne </tag>
-            
             <tag> mv </tag>
+            
+            <tag> avril lavigne </tag>
             
         </tags>
       
