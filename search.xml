@@ -4,6 +4,149 @@
   
     
     <entry>
+      <title>输入法如何打出直角引号</title>
+      <link href="2021/03/31/%E8%BE%93%E5%85%A5%E6%B3%95%E5%A6%82%E4%BD%95%E6%89%93%E5%87%BA%E7%9B%B4%E8%A7%92%E5%BC%95%E5%8F%B7/"/>
+      <url>2021/03/31/%E8%BE%93%E5%85%A5%E6%B3%95%E5%A6%82%E4%BD%95%E6%89%93%E5%87%BA%E7%9B%B4%E8%A7%92%E5%BC%95%E5%8F%B7/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>以<a href="https://shouji.sogou.com/?r=pinyin" target="_blank" rel="noopener">搜狗输入法</a>为例</p><p><strong>方式1: 自定义短语</strong></p><p>1、打开输入法 「系统设置」 ,点击 「高级」 ,选择 「自定义短语设置」</p><p>2、选择「添加新定义」,输入「缩写」内容，用于引出 文本内容，如 “yh”表示 「」，点击确定</p><p>3、文本输入时 ，输入 “yh” ，就会显示 直角引号的选项</p><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+      
+      
+      <categories>
+          
+          <category> 技 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> skills </tag>
+            
+            <tag> 输入法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>办公工具&amp;网站推荐</title>
+      <link href="2021/03/31/%E5%8A%9E%E5%85%AC%E5%B7%A5%E5%85%B7-%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90/"/>
+      <url>2021/03/31/%E5%8A%9E%E5%85%AC%E5%B7%A5%E5%85%B7-%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="格式转换"><a href="#格式转换" class="headerlink" title="格式转换"></a>格式转换</h2><p>Convertio:  <a href="https://convertio.co/zh/mp4-converter/" target="_blank" rel="noopener">https://convertio.co/zh/mp4-converter/</a></p><p>FreeConvert:  <a href="https://www.freeconvert.com/" target="_blank" rel="noopener">https://www.freeconvert.com/</a></p><p>Office-Convert:  <a href="https://cn.office-converter.com/" target="_blank" rel="noopener">https://cn.office-converter.com/</a></p><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+      
+      
+      <categories>
+          
+          <category> 技 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> office_tools </tag>
+            
+            <tag> tools </tag>
+            
+            <tag> websites </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>电脑如何使用安卓应用</title>
+      <link href="2021/03/31/%E7%94%B5%E8%84%91%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8/"/>
+      <url>2021/03/31/%E7%94%B5%E8%84%91%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><strong>问题: windows系统如何使用安卓平台的应用app？</strong></p><p>使用<a href="https://mumu.163.com/" target="_blank" rel="noopener">MuMu模拟器</a>，模拟器一般是电脑玩手机游戏的，但是当然可以运行使用其他类型应用</p><p>自带应用平台，大部分内容是游戏类，和基本的应用，社交服务，如有特殊应用，可以导入外部<a href="https://baike.baidu.com/item/apk" target="_blank" rel="noopener">apk</a>包</p><p>使用步骤，也是比较简单的，就是安装可能比较缓慢</p><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+      
+      
+      <categories>
+          
+          <category> 技 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> android </tag>
+            
+            <tag> windows </tag>
+            
+            <tag> skills </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>IT | 编程中的词汇</title>
+      <link href="2021/03/31/IT-%E7%BC%96%E7%A8%8B%E4%B8%AD%E7%9A%84%E8%AF%8D%E6%B1%87/"/>
+      <url>2021/03/31/IT-%E7%BC%96%E7%A8%8B%E4%B8%AD%E7%9A%84%E8%AF%8D%E6%B1%87/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+      
+      
+      <categories>
+          
+          <category> 技 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> english </tag>
+            
+            <tag> CS </tag>
+            
+            <tag> word </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>english | 英语翻译作文词组短语表达积累</title>
+      <link href="2021/03/30/english-%E8%8B%B1%E8%AF%AD%E7%BF%BB%E8%AF%91%E4%BD%9C%E6%96%87%E8%AF%8D%E7%BB%84%E7%9F%AD%E8%AF%AD%E8%A1%A8%E8%BE%BE%E7%A7%AF%E7%B4%AF/"/>
+      <url>2021/03/30/english-%E8%8B%B1%E8%AF%AD%E7%BF%BB%E8%AF%91%E4%BD%9C%E6%96%87%E8%AF%8D%E7%BB%84%E7%9F%AD%E8%AF%AD%E8%A1%A8%E8%BE%BE%E7%A7%AF%E7%B4%AF/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote><p> 同义词更新，积累对比，相同含义表达，取最优</p><p> 主要来源(major souce from): 翻译,阅读,作文,日常</p></blockquote><p>一般格式:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">year-month</span><br><span class="line">word</span><br><span class="line">...</span><br><span class="line">phrase</span><br><span class="line">...</span><br></pre></td></tr></table></figure><h2 id="2020-3月份"><a href="#2020-3月份" class="headerlink" title="2020-3月份"></a>2020-3月份</h2><p><strong>1、单词</strong></p><p>extremely - 极度地,极其地 (表示程度上的 “很”)</p><p>nowadays - 现在</p><p>increase , grow - 增长</p><p>dish - 碟子,一道菜 区分 meal - 一餐,一顿饭</p><p>dinner - 用餐者(饭桌上吃饭的人)</p><p>internalize - a.使内化的 </p><p>cultivate - v.培育,培养(能力) ; 栽培植物</p><p>encounter - v.遭遇,碰见(偶尔) ,类似 come accross (意外碰见)</p><p>development - n.发展,提高,类似的 improve - v.提高,提升</p><p>especially - adv.尤其地,特别地 （表示一种 “强调”)</p><p><strong>2、词组</strong></p><p>at an astonishing rate in … - 以惊人的速率</p><p>literary works - 文学作品</p><p>(in) other form of … - 其他形式的</p><p>survey shows - 调查显示 (<code>翻译,作文常用</code>)</p><p>newspaper and periodicals - 报刊(报纸和期刊)</p><p>remain silent - 保持安静 (食不言) do not make any noises when eating.</p><p>be supposed to - 应该/被认为…</p><p>table arrangement - 座次 (桌面-安排方式)</p><p>in addition - 除此之外( 表示递进关系,常用句首，单独成句),类似的词 besides </p><p>self-evident - 不言而喻</p><p>first of all - 首先  (<code>作文常用</code>) (<code>加分点</code>)</p><p>such as - 例如</p><p>as … doing . - 当…时候( 表示一种条件)</p><p>be able to + 动原 - 能够 (能…)  </p><p>for one thing - 一方面   (<code>作文常用</code>) (<code>加分点</code>)</p><p>for another - 另一方面    (<code>作文常用</code>) (<code>加分点</code>)</p><p>…start…with - 从…开始</p><p>by doing this - 这样一来 , 对比 by this way   (<code>作文常用</code>) (<code>加分点</code>)</p><p>in turn - 进而,从而  (递进关系)     (<code>作文常用</code>)</p><p>strong english ability - 良好的英语能力</p><p>in conclusion - 总而言之    (<code>作文常用</code>) (<code>加分点</code>)</p><p>bring benefits to  - 对…有裨益(给…带来益处)     (<code>作文常用</code>)</p><p>grasp rules - 掌握,掌控规则 , grasp v.掌控,领悟</p><p>broaden one‘s horizons - 开拓某人的视野    (<code>作文常用</code>) (<code>加分点</code>)</p><p>is the basis for … - 是…的基础</p><p>major source of … - …的主要来源    (<code>作文常用</code>) (<code>加分点</code>)</p><p>in order to - 为了… (表目的)</p><p>provide sth for sb / sb (with) sth -  提供…</p><p>development paradigm - 发展格局</p><p>less than - 更少地… ; no less than - 高于…</p><p>on time - 准时 , in time - 及时</p><p>appeal to sb - 吸引某人</p><p><strong>3、亮点句型</strong></p><p>we should start with …, and then move on to … - 我们可以先.., 再…</p><p>for one thing … for another … - 一方面…另一方面</p><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+      
+      
+      <categories>
+          
+          <category> 技 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> cet </tag>
+            
+            <tag> english </tag>
+            
+            <tag> Daily </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>给hexo博客添加douban读书页</title>
       <link href="2021/03/27/%E7%BB%99hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0douban%E8%AF%BB%E4%B9%A6%E9%A1%B5/"/>
       <url>2021/03/27/%E7%BB%99hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0douban%E8%AF%BB%E4%B9%A6%E9%A1%B5/</url>
