@@ -1,0 +1,42 @@
+/* 博客文章中的图片样式 */
+#article-container img{
+  border: 6px solid #e6e3e3;
+  width: 600px;
+  height: auto;
+  margin-top: 100px; 
+  margin-top: 100px; 
+  border-radius: 20px;
+  transition:color 2s, border 2s;
+}
+/* 改变了 color , border-color, ⚠️改变了的元素都要写全 */
+#article-container img:hover{
+  border: 6px solid #e25757;
+  /*设置transition过渡*/
+  width: 600px;
+  height: auto;
+  margin-top: 100px; 
+  margin-top: 100px; 
+}
+
+
+
+/* 博客mindmap插件css样式 */
+  blockquote.pullquote {
+  position: relative;
+  max-width: 100%;
+  font-size: 110%;
+}
+/* 强制隐藏多渲染出来的 */
+  #kity_svg_24{
+  cursor: -webkit-grab;
+  display: none !important;  
+}
+/* markdown键盘样式 */
+#article-container kbd{
+  background: #6f42c12b;
+  border-radius: 11%;
+  padding: 2px 4px;
+  font-weight: bold;
+  font-family: serif;
+  border: solid 1px #c5c5c5;
+}
