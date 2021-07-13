@@ -1,0 +1,405 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>虚拟机安装macOS黑苹果 | ocean</title><meta name="keywords" content="TE03-MacOS"><meta name="author" content="Nathan Martin"><meta name="copyright" content="Nathan Martin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="参考:  全网最详细的VMware虚拟机安装MacOS系统教程，没有之一！！！附全部资源  前言使用Vmware安装macOS虚拟机系统, Vmware默认支持安装macOS,所以需要解锁工具解锁VMware 环境准备 宿主机 windows 10 lenovo Yoga 14sARH 2021   虚拟机 VMware15.5.5 build-16285975 | VMware安装教程▶   ⚠">
+<meta property="og:type" content="article">
+<meta property="og:title" content="虚拟机安装macOS黑苹果">
+<meta property="og:url" content="http://nathanniee.top/posts/c8cc.html">
+<meta property="og:site_name" content="ocean">
+<meta property="og:description" content="参考:  全网最详细的VMware虚拟机安装MacOS系统教程，没有之一！！！附全部资源  前言使用Vmware安装macOS虚拟机系统, Vmware默认支持安装macOS,所以需要解锁工具解锁VMware 环境准备 宿主机 windows 10 lenovo Yoga 14sARH 2021   虚拟机 VMware15.5.5 build-16285975 | VMware安装教程▶   ⚠">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2021/05/e29c167b4c14b192.png">
+<meta property="article:published_time" content="2021-04-30T05:00:06.000Z">
+<meta property="article:modified_time" content="2021-04-30T05:00:06.000Z">
+<meta property="article:author" content="Nathan Martin">
+<meta property="article:tag" content="TE03-MacOS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.bmp.ovh/imgs/2021/05/e29c167b4c14b192.png"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://nathanniee.top/posts/c8cc.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '4.2.1',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":180,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":60,"languages":{"author":"作者: Nathan Martin","link":"链接: ","source":"来源: ocean","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: {"text":"富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善","fontSize":"30px"},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: true
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2021-04-30 13:00:06'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = '2'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><link rel="stylesheet" href="/css/tag.css"><link rel="stylesheet" href="/css/custom.css"><script src="/js/get-markdownLink.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@latest/butterfly/css/tags.css"><meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">57</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">40</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-tasks"></i><span> 检索</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-bookmark"></i><span> 分类</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/archives/"><i class="fa-fw fas fa-folder-open"></i><span> 时间轴</span></a></li><li><a class="site-page" href="/history/"><i class="fa-fw fas fa-history"></i><span> 文章目录</span></a></li><li><a class="site-page" href="/mindmap/"><i class="fa-fw fas fa-sitemap"></i><span> 脑图</span></a></li><li><a class="site-page" href="/random.html"><i class="fa-fw fas fa-random"></i><span> 随机文章</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fas fa-location-arrow"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fas fa-comments"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书籍</span></a></li><li><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 相册</span></a></li><li><a class="site-page" href="/zone/youtubeChannel.html"><i class="fa-fw fas fa-youtube"></i><span> Youtuber</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/box/"><i class="fa-fw fas fa-compass"></i><span> 网址导航</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境准备"><span class="toc-text">环境准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#所需工具"><span class="toc-text">所需工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装教程"><span class="toc-text">安装教程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下载后的准备工作"><span class="toc-text">下载后的准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用虚拟机创建macOS"><span class="toc-text">使用虚拟机创建macOS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#🖥相关网站-amp-文件"><span class="toc-text">🖥相关网站&amp;文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#🙋‍♂️总结常见问题及其解决方案"><span class="toc-text">🙋‍♂️总结常见问题及其解决方案</span></a></li></ol></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://i.bmp.ovh/imgs/2021/05/e29c167b4c14b192.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ocean</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-tasks"></i><span> 检索</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-bookmark"></i><span> 分类</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/archives/"><i class="fa-fw fas fa-folder-open"></i><span> 时间轴</span></a></li><li><a class="site-page" href="/history/"><i class="fa-fw fas fa-history"></i><span> 文章目录</span></a></li><li><a class="site-page" href="/mindmap/"><i class="fa-fw fas fa-sitemap"></i><span> 脑图</span></a></li><li><a class="site-page" href="/random.html"><i class="fa-fw fas fa-random"></i><span> 随机文章</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fas fa-location-arrow"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fas fa-comments"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书籍</span></a></li><li><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 相册</span></a></li><li><a class="site-page" href="/zone/youtubeChannel.html"><i class="fa-fw fas fa-youtube"></i><span> Youtuber</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/box/"><i class="fa-fw fas fa-compass"></i><span> 网址导航</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">虚拟机安装macOS黑苹果</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-04-30T05:00:06.000Z" title="发表于 2021-04-30 13:00:06">2021-04-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-04-30T05:00:06.000Z" title="更新于 2021-04-30 13:00:06">2021-04-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/02-%E6%A1%88%E4%BE%8B%E6%95%99%E7%A8%8B/">02-案例教程</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><p>参考:</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/337036027" target="_blank" rel="noopener">全网最详细的VMware虚拟机安装MacOS系统教程，没有之一！！！附全部资源</a></li>
+</ul>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用Vmware安装macOS虚拟机系统, Vmware默认支持安装macOS,所以需要<strong>解锁工具</strong>解锁VMware</p>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ul>
+<li><p>宿主机 <code>windows 10</code> lenovo Yoga 14sARH 2021 </p>
+</li>
+<li><p>虚拟机 VMware<code>15.5.5</code> build-16285975 | <a href="https://link.zhihu.com/?target=https%3A//mp.weixin.qq.com/s%3F__biz%3DMzU4NDcxNjQ2Ng%3D%3D%26mid%3D2247489315%26idx%3D1%26sn%3D222d90fa2805b01fa408e2fea8844671%26chksm%3Dfd94cefecae347e8093dd537d564c00316abef92d2bdf2c7a47125d07ff404c7866607d09641%26token%3D956469501%26lang%3Dzh_CN%23rd">VMware安装教程▶</a></p>
+</li>
+</ul>
+<p>⚠️听说虚拟机版本太高可能安装不了(&gt;16.x.x.x),建议使用VMware 15.0.x.x版本</p>
+<p>准备文件/工具(3个)</p>
+<h2 id="所需工具"><a href="#所需工具" class="headerlink" title="所需工具"></a>所需工具</h2><ol>
+<li>VM解锁工具: MK-Unlocker 或  Unlocker_v3.0.3 </li>
+<li>MacOS Mojave 10.14懒人包</li>
+<li>优化卡顿工具(beamoff)</li>
+</ol>
+<p><strong>下载方式</strong></p>
+<ol>
+<li><p>全部下载 <a href="https://pan.baidu.com/s/1lXzyW2YRui_OJzVGtOWPJA" target="_blank" rel="noopener">提取码：txgp </a></p>
+</li>
+<li><p>部分下载</p>
+<ul>
+<li><p><a href="https://pan.baidu.com/s/1lXzyW2YRui_OJzVGtOWPJA" target="_blank" rel="noopener">解锁工具（MK-Unlocker + Unlocker_v3.0.3）【提取码：txgp 】</a></p>
+</li>
+<li><p><a href="https://pan.baidu.com/s/1tp-1DIRssL9WMOTmGyDQRw" target="_blank" rel="noopener">MacOS镜像懒人包(MacOS Mojave 10.14.6)【提取码：9e60 】</a></p>
+</li>
+<li><p><a href="https://pan.baidu.com/s/1ceag0nXeBgv-OT_CkriXaQ" target="_blank" rel="noopener">优化卡顿工具（beamoff【提取码：y7vh】</a></p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h2><p>参考:<a href="https://zhuanlan.zhihu.com/p/337036027" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/337036027</a></p>
+<p>⚠️基本上很详细,可能存在<strong>多出</strong>一些步骤,自行处理即可</p>
+<h3 id="下载后的准备工作"><a href="#下载后的准备工作" class="headerlink" title="下载后的准备工作"></a>下载后的准备工作</h3><p>🧡1、开启BIOS虚拟化 (分为CPU Intel 和 AMD 机型) | <a href="https://blog.csdn.net/weixin_44741610/article/details/107041197" target="_blank" rel="noopener">lenovo开启BIOS虚拟化▶</a></p>
+<p>⚠️其他品牌机型自行搜索</p>
+<p>⚠️如没有启用,否则安装过程中会出错，提示“Intel VT-x处于禁用状态”。</p>
+<p>🧡2、关闭杀毒软件 和 windows defender</p>
+<p>默认的VMware不支持识别和安装MacOS镜像，需要解锁，解锁前记得关闭杀毒软件以及windefender。</p>
+<p>🧡3、使用解压缩工具MK-Unlocker</p>
+<p>关闭虚拟机，解压解锁工具MK-Unlocker，以管理员身份运行<code>win-install.cmd</code></p>
+<p>运行后会弹出dos命令窗口，等待运行完成，运行完成后会自动关闭窗口。</p>
+<p>⚠️MK-Unlocker文件路径不能出现中文，否则会出现<code>Can&#39;t load frozen modules</code>的错误。</p>
+<h3 id="使用虚拟机创建macOS"><a href="#使用虚拟机创建macOS" class="headerlink" title="使用虚拟机创建macOS"></a>使用虚拟机创建macOS</h3><p>详细步骤参考: <a href="https://zhuanlan.zhihu.com/p/337036027" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/337036027</a></p>
+<p>解锁后,打开VMware15.5虚拟机,点击【创建新的虚拟机选项】</p>
+<p><strong>🧡1、新建虚拟机导向</strong></p>
+<p>1、弹出界面,勾选【自定义(高级(C))】,点击【下一步】</p>
+<p>2、选择虚拟机硬件兼容性</p>
+<p>兼容性选择 【Workstation15.x】,点击【下一步】</p>
+<blockquote>
+<p>如果你下载是上面给的MacOS懒人包，那么下载的10.14的懒人包后缀为<code>.iso</code>，需要把<code>.iso</code>后缀改为<code>.cdr</code>，懒人包都是用原版镜像制作的。（也可以在网上自行找<code>.cdr</code>懒人包，那么忽略此步骤）</p>
+<p>重命名: <code>.iso</code>改为➡<code>.cdr</code>,出现提示⚠️,选择【是】</p>
+</blockquote>
+<p>3、安装客户操作系统</p>
+<p>下一步,点击【浏览】,选择后缀为<code>.cdr</code>的懒人包( 注意把右下角选择【所有文件】，选中后【打开】。)</p>
+<p>4、选择客户机操作系统</p>
+<p>操作系统选择【Apple Mac OS X(M)】,版本选择[macOS 10.14] (如果没有macOS 10.14选项,则选择最高的一个版本)</p>
+<p>⚠️如果前面没有解锁或者解锁失败，此处是没有[Apple Mac OS X]选择项的。</p>
+<p>5、命名虚拟机</p>
+<p>修改MacOS的安装位置，建议新建一个专门的文件夹，路径中不要出现中文。</p>
+<p>6、处理器配置</p>
+<p>⚠️以实际设备配置为准自行设置</p>
+<p>此时 设备AMD 1处理器 +8内核(16线程)+内存<code>16GB</code>+硬盘<code>512GB</code></p>
+<p>选择配置是 <code>1处理器+4内核</code>,内核总数<code>4</code>,点击【下一步】</p>
+<p>一般处理器选择 总数<code>2~4</code>即可 （宿主机处理器核配置可以在设备管理器中都能看到）</p>
+<p>7、此虚拟机内存</p>
+<p>设置 <code>4GB</code>,点击【下一步】</p>
+<p>8、网络连接</p>
+<p>选择【使用网络地址转换NAT(E】,点击【下一步】</p>
+<p>9、选择I/O控制器类型</p>
+<p>选择【LSI Logic(L)  (推荐)】,点击【下一步】</p>
+<p>10、选择磁盘类型</p>
+<p>硬盘类型选择推荐设置【SATA(A  (推荐)】  ,点击【下一步】</p>
+<p>11、选择磁盘</p>
+<p>选择【创建新虚拟磁盘】,点击【下一步】</p>
+<p>12、指定磁盘容量</p>
+<ul>
+<li>选择 最大磁盘大小 <code>100GB</code> (此时设备是512GB(可用140多GB))</li>
+<li>选择 将虚拟磁盘拆分为多个文件(M) ,点击【下一步】</li>
+</ul>
+<p>13、已准备好创建虚拟机</p>
+<p>直接 点击【下一步】</p>
+<p>配置完成，点击[完成]，配置好后先不要启动MacOS系统。</p>
+<hr>
+<p>🧡2、配置<code>.vmx</code>文件</p>
+<p>1、找到MacOS的安装位置（上面步骤中已自行设置），使用记事本打开后缀为<code>.vmx</code>的[macOS 10.14.vmx]的文件。</p>
+<p>2.在最后添加以下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">smc.version &#x3D; 0</span><br></pre></td></tr></table></figure>
+
+<p>3、保存退出。</p>
+<hr>
+<p>🧡3、开启虚拟机</p>
+<p>启动MacOS系统。</p>
+<p>启动MacOS界面。</p>
+<p>详细步骤参考: <a href="https://zhuanlan.zhihu.com/p/337036027" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/337036027</a></p>
+<p>后面如果想继续<strong>提升流畅度</strong>,可以选择使用 MacOS虚拟机优化软件<code>beamoff</code><a href="https://github.com/JasF/beamoff" target="_blank" rel="noopener">GitHub项目地址▶</a></p>
+<p><code>beamoff</code>是VM上Mac虚拟机的优化神器</p>
+<p>⚠️</p>
+<p>由于macOS是mac操作系统上支持的,所以虚拟机上的配置,图形显存最大 <code>128M</code></p>
+<p>也没有人开发,研究,毕竟在<strong>非mac</strong>电脑使用<strong>mac系统</strong>是不合法的</p>
+<p>128M这个事情让windows下vmware装MacOS就是一个玩具系统，没办法。还是感谢提供优化工具。</p>
+<p>由于各种条件的限制，在 Vmware 虚拟机上安装的 macOS 性能远远没有真机好，只能浅尝辄止，如果要将其作为生产力工具还是不现实的。等熟悉了该系统的操作后，再决定是否去买真实的苹果电脑，或许才是更为明智的选择。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li><p>一般来说按照上面教程<strong>基本没有问题</strong>,可能会出现,网络无法连接,或者其他小问题,这个可能和自己设备的相关实际情况有关</p>
+</li>
+<li><p>macOS虚拟机的运行流畅<strong>关系</strong>宿主机设备的配置,和对macOSU虚拟机的配置</p>
+</li>
+<li><p>笔者使用没有明显的延迟,当然比不过真机😂</p>
+</li>
+</ul>
+<h3 id="🖥相关网站-amp-文件"><a href="#🖥相关网站-amp-文件" class="headerlink" title="🖥相关网站&amp;文件"></a>🖥相关网站&amp;文件</h3><ul>
+<li><a href="https://docs.vmware.com/cn/VMware-Workstation-Pro/15.0/com.vmware.ws.using.doc/GUID-0EE752F8-C159-487A-9159-FE1F646EE4CA.html" target="_blank" rel="noopener">vmware文档【中文】</a></li>
+<li><a href="http://softwareupdate.vmware.com/cds/vmw-desktop/fusion/10.0.0/6665085/packages/" target="_blank" rel="noopener">draw.iso</a></li>
+</ul>
+<ul>
+<li>mac应用资源站 <a href="https://www.macdo.cn/23164.html" target="_blank" rel="noopener">https://www.macdo.cn/23164.html</a>             </li>
+<li>mac应用资源教程站 <a href="https://www.mfpud.com/topics/612/" target="_blank" rel="noopener">https://www.mfpud.com/topics/612/</a>         </li>
+<li>【虚拟机】macOS Mojave 10.14.6 黑苹果虚拟机懒人版镜像 <a href="https://www.mfpud.com/topics/1126/" target="_blank" rel="noopener">https://www.mfpud.com/topics/1126/</a> </li>
+</ul>
+<h3 id="🙋‍♂️总结常见问题及其解决方案"><a href="#🙋‍♂️总结常见问题及其解决方案" class="headerlink" title="🙋‍♂️总结常见问题及其解决方案"></a>🙋‍♂️总结常见问题及其解决方案</h3><p> 问题/异常</p>
+<table>
+<thead>
+<tr>
+<th>问题简述</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>VMWARE 虚拟机问题——打开.vmx文件无响应</td>
+<td>来自 <a href="https://blog.csdn.net/wanruiou/article/details/105630904" target="_blank" rel="noopener">https://blog.csdn.net/wanruiou/article/details/105630904</a></td>
+</tr>
+<tr>
+<td>联想笔记本进入BIOS开启Intel VT-x (DONE)</td>
+<td>来自 <a href="https://blog.csdn.net/weixin_44741610/article/details/107041197" target="_blank" rel="noopener">https://blog.csdn.net/weixin_44741610/article/details/107041197</a></td>
+</tr>
+<tr>
+<td>Vmware删除已创建虚拟机</td>
+<td>来自 <a href="https://blog.csdn.net/weixin_46424556/article/details/105129732" target="_blank" rel="noopener">https://blog.csdn.net/weixin_46424556/article/details/105129732</a></td>
+</tr>
+<tr>
+<td>VMware无法打开已存在虚拟机vmx文件解决办法</td>
+<td>来自 <a href="https://blog.csdn.net/Reserved_person/article/details/70853328?utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-9.control&dist_request_id=1619682748221_45257&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-9.control" target="_blank" rel="noopener">来源</a></td>
+</tr>
+<tr>
+<td>VM虚拟机安装(升级)苹果Mac系统停在logo界面不动解决办法</td>
+<td>来自 <a href="https://www.beihaiting.com/a/SJC/PG/20200226/11513.html" target="_blank" rel="noopener">https://www.beihaiting.com/a/SJC/PG/20200226/11513.html</a></td>
+</tr>
+<tr>
+<td>如何解决VMware上MAC虚拟机不能上网问题</td>
+<td>来自 <a href="https://jingyan.baidu.com/article/0964eca21fd7a38284f53656.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/0964eca21fd7a38284f53656.html</a></td>
+</tr>
+<tr>
+<td>VM虚拟机装MAC无法联网，如何设置？</td>
+<td>来自 <a href="https://blog.csdn.net/Bearin/article/details/106182539" target="_blank" rel="noopener">https://blog.csdn.net/Bearin/article/details/106182539</a></td>
+</tr>
+<tr>
+<td>VMware安装MacOSx系统如何实现联网</td>
+<td>来自 <a href="https://www.jianshu.com/p/5fa0caf30b6c" target="_blank" rel="noopener">https://www.jianshu.com/p/5fa0caf30b6c</a></td>
+</tr>
+<tr>
+<td>VMware16安装Mac11.1Big Sur遇到“客户机操作系统已禁用 CPU。请关闭或重置虚拟机。“解决方案</td>
+<td>来自 <a href="https://blog.csdn.net/weixin_42848413/article/details/115260253" target="_blank" rel="noopener">https://blog.csdn.net/weixin_42848413/article/details/115260253</a></td>
+</tr>
+<tr>
+<td>AMD Vmware15 装 MaCOSX 10.14 报错# 客户机操作系统已禁用 CPU，请关闭或重置虚拟机</td>
+<td>来自 <a href="https://blog.csdn.net/silentbird520/article/details/96039415" target="_blank" rel="noopener">https://blog.csdn.net/silentbird520/article/details/96039415</a></td>
+</tr>
+<tr>
+<td>如果出现类似 这个虚拟机需要avx2，但是没有avx 的报错 将文件中 virtualHW.version = “16”改为10即可解决。<br/>安装过程中如果出现鼠标键盘无法使用的情况，请将usb改为2.0</td>
+<td>来自 <a href="https://blog.csdn.net/u011809374/article/details/106448298" target="_blank" rel="noopener">https://blog.csdn.net/u011809374/article/details/106448298</a></td>
+</tr>
+<tr>
+<td>{搬运}<a href="https://www.52pojie.cn/thread-661779-1-1.html" target="_blank" rel="noopener">虚拟机</a>VMware Workstation Pro 15.0.0及永久激活密钥</td>
+<td>来自 <a href="https://www.52pojie.cn/thread-804891-1-1.html" target="_blank" rel="noopener">https://www.52pojie.cn/thread-804891-1-1.html</a></td>
+</tr>
+<tr>
+<td>vmware12中mac系统与主机共享文件</td>
+<td>来自 <a href="https://blog.csdn.net/soachenshui/article/details/49303519" target="_blank" rel="noopener">https://blog.csdn.net/soachenshui/article/details/49303519</a></td>
+</tr>
+<tr>
+<td>虚拟机的macOS与主机windows如何实现文件互通</td>
+<td>来自 <a href="https://www.jianshu.com/p/d10f8a2fd173" target="_blank" rel="noopener">https://www.jianshu.com/p/d10f8a2fd173</a></td>
+</tr>
+<tr>
+<td>VMware 安装macOS 系统无法安装VMtools解决方案</td>
+<td>来自 <a href="https://blog.csdn.net/weixin_45348389/article/details/102784858" target="_blank" rel="noopener">https://blog.csdn.net/weixin_45348389/article/details/102784858</a></td>
+</tr>
+<tr>
+<td>VMware中的mac os（Catalina）与win10共享文件夹</td>
+<td>来自 <a href="https://blog.csdn.net/winniezhang/article/details/104303489" target="_blank" rel="noopener">https://blog.csdn.net/winniezhang/article/details/104303489</a></td>
+</tr>
+<tr>
+<td>安装VMTools失败的三类解决方法（Windows、Linux、MacOs）</td>
+<td>来自 <a href="https://blog.csdn.net/Frank_dwx/article/details/107852311" target="_blank" rel="noopener">https://blog.csdn.net/Frank_dwx/article/details/107852311</a></td>
+</tr>
+<tr>
+<td>教你如何在Mac系统下解压rar,zip等各种格式文件</td>
+<td>来自 <a href="https://zhuanlan.zhihu.com/p/103473716" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/103473716</a></td>
+</tr>
+<tr>
+<td>【转载】【iOS】VMWare中MAC OS X的安装，VMWare tools的配置与iOS的Helloworld</td>
+<td>来自 <a href="https://www.pianshen.com/article/4702588369/" target="_blank" rel="noopener">https://www.pianshen.com/article/4702588369/</a></td>
+</tr>
+</tbody></table>
+<p>⚠️最后发现所有问题都是 因为解锁时,选择错了解锁工具</p>
+<p>上述给出的解锁工具有两个MK-Unlocker 或  Unlocker_v3.0.3 </p>
+<p>应该选择MK-Unlocker</p>
+<p>⚠️可能存在的坑</p>
+<p>1、VMware版本。Vmware版本使用 15.0.0,使用15.5.0不行 (可能虚拟机版本太高)</p>
+<p>2、虚拟机处理器设置。<strong>不要勾选虚化</strong>AMD-V/RVI,和虚拟化cpu计数器</p>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css"></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Nathan Martin</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://nathanniee.top/posts/c8cc.html">http://nathanniee.top/posts/c8cc.html</a></span></div><div class="post-copyright_link"><span class="post-copyright-meta">分享链接: </span><span class="post-copyright-info"><button id="get-btn" onclick="clickTogetLink()">click me to obtain markdown link</button></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://nathanniee.top" target="_blank">ocean</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/TE03-MacOS/">TE03-MacOS</a></div><div class="post_share"></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/img/wechat.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/9298.html"><img class="prev-cover" src="https://i.bmp.ovh/imgs/2021/05/7e03a47623335305.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">学习工作必备软件工具</div></div></a></div><div class="next-post pull-right"><a href="/posts/1ad6.html"><img class="next-cover" src="https://ae03.alicdn.com/kf/Uad92a545e3984752af46861bf962fc36f.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">english | 英语翻译作文词组短语表达积累</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></article></main><footer id="footer" style="background-image: url(https://i.bmp.ovh/imgs/2021/05/e29c167b4c14b192.png)"><div id="footer-wrap"><div class="framework-info"><span>框架 </span><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener">Butterfly</a></div><div class="footer_custom_text">I can do better!</div><div class="timeDate"><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    $.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js', function () {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'forest',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script><script>function loadValine () {
+  function initValine () {
+    const initData = {
+      el: '#vcomment',
+      appId: '0uv3dwMCwEi7bSJoXUF2yLKd-MdYXbMMI',
+      appKey: '7oGs8W6W6L5oJfiy9Hen31mj',
+      placeholder: '输入QQ号可自动获取昵称!',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: true,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script src="/js/ip_content.js"></script><script src="/js/timeDate.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" async="async" mobile="true"></script></div><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

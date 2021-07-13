@@ -1,0 +1,591 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ocean - hello world</title><meta name="author" content="Nathan Martin"><meta name="copyright" content="Nathan Martin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta property="og:type" content="website">
+<meta property="og:title" content="ocean">
+<meta property="og:url" content="http://nathanniee.top/page/3/index.html">
+<meta property="og:site_name" content="ocean">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://nathanniee.top/img/avatar.png">
+<meta property="article:author" content="Nathan Martin">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://nathanniee.top/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://nathanniee.top/page/3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '4.2.1',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":180,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":60,"languages":{"author":"作者: Nathan Martin","link":"链接: ","source":"来源: ocean","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: {"text":"富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善","fontSize":"30px"},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: true
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false,
+  postUpdate: '2021-07-13 23:54:14'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = '2'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><link rel="stylesheet" href="/css/tag.css"><link rel="stylesheet" href="/css/custom.css"><script src="/js/get-markdownLink.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@latest/butterfly/css/tags.css"><meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">57</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">40</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-tasks"></i><span> 检索</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-bookmark"></i><span> 分类</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/archives/"><i class="fa-fw fas fa-folder-open"></i><span> 时间轴</span></a></li><li><a class="site-page" href="/history/"><i class="fa-fw fas fa-history"></i><span> 文章目录</span></a></li><li><a class="site-page" href="/mindmap/"><i class="fa-fw fas fa-sitemap"></i><span> 脑图</span></a></li><li><a class="site-page" href="/random.html"><i class="fa-fw fas fa-random"></i><span> 随机文章</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fas fa-location-arrow"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fas fa-comments"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书籍</span></a></li><li><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 相册</span></a></li><li><a class="site-page" href="/zone/youtubeChannel.html"><i class="fa-fw fas fa-youtube"></i><span> Youtuber</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/box/"><i class="fa-fw fas fa-compass"></i><span> 网址导航</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><header class="full_page" id="page-header" style="background-image: url(https://img-blog.csdnimg.cn/20200503171928463.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ocean</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-tasks"></i><span> 检索</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-bookmark"></i><span> 分类</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/archives/"><i class="fa-fw fas fa-folder-open"></i><span> 时间轴</span></a></li><li><a class="site-page" href="/history/"><i class="fa-fw fas fa-history"></i><span> 文章目录</span></a></li><li><a class="site-page" href="/mindmap/"><i class="fa-fw fas fa-sitemap"></i><span> 脑图</span></a></li><li><a class="site-page" href="/random.html"><i class="fa-fw fas fa-random"></i><span> 随机文章</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fas fa-location-arrow"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fas fa-comments"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书籍</span></a></li><li><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 相册</span></a></li><li><a class="site-page" href="/zone/youtubeChannel.html"><i class="fa-fw fas fa-youtube"></i><span> Youtuber</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/box/"><i class="fa-fw fas fa-compass"></i><span> 网址导航</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site-title">ocean</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="/atom.xml" target="_blank" title=""><i class="fa fa-rss"></i></a><a class="social-icon" href="https://github.com/martinniee" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:https://yang47984@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://www.zhihu.com/" target="_blank" title="知乎"><i class="fab fa-zhihu"></i></a><a class="social-icon" href="https://blog.csdn.net/qq_44994842?spm=1001.2101.3001.5343" target="_blank" title="CSDN"><i class="fab fa-cuttlefish"></i></a><a class="social-icon" href="https://juejin.cn/" target="_blank" title="掘金"><i class="fas fa-sort-amount-down"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/f03a.html" title="英语词根词缀积累">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/martinniee/hexoBlogImg/img/Cache_-c56d45df6e61af4..jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="英语词根词缀积累"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/f03a.html" title="英语词根词缀积累">英语词根词缀积累</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-06T17:09:49.000Z" title="发表于 2021-05-07 01:09:49">2021-05-07</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-06T17:09:49.000Z" title="更新于 2021-05-07 01:09:49">2021-05-07</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/03-%E5%A4%87%E5%BF%98%E6%B8%85%E5%8D%95/">03-备忘清单</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/LI07-%E8%8B%B1%E8%AF%AD/">LI07-英语</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/LI10-%E6%8A%80%E5%B7%A7/">LI10-技巧</a></span></div><div class="content">按位置前缀后缀ous
+adj.后缀, 表 ***性质, 对其名词的大量化,多数化
+如: 
+
+按含义方位/位置内
+1en/em/ent
+
+外
+123e/ex/forfor(外)+give(给予)-&gt;给你外逃的机会-&gt;原谅for(外)+bid(命令)-&gt;外面的命令(超出命令之外的)-&gt;禁止,禁令
+
+周围
+12periperi(周围)+meter(测量)-&gt;周长
+
+旁边
+12para+llel(线)-&gt;参数para(傍边)+meter(长度)-&gt;参数
+
+之间
+12interinter(之间)+val(墙)-&gt;间隔,间隙
+
+远
+12teletele(远)+phone(声音)-&gt;电话
+
+状态始终
+1234perper(始终)+son(声音)-&gt;人per(始终)+sist(站立)-&gt;坚持,持续per(始终)+man(停留)+ment(adj后缀)-&gt;永久
+
+
+
+常见前/后 缀名词
+1ion(行为结果)
+
+形容词
+1ent
+
+动词
+1234567dia(贯穿)+gram(写画)-&gt;示意图dia(贯穿)+meter(测量)- ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/13e8.html" title="英语| 词汇专题(6) | 词根词缀">     <img class="post_bg" src="https://z3.ax1x.com/2021/05/10/gtaf3D.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="英语| 词汇专题(6) | 词根词缀"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/13e8.html" title="英语| 词汇专题(6) | 词根词缀">英语| 词汇专题(6) | 词根词缀</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-06T05:11:00.000Z" title="发表于 2021-05-06 13:11:00">2021-05-06</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-06T05:11:00.000Z" title="更新于 2021-05-06 13:11:00">2021-05-06</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/03-%E5%A4%87%E5%BF%98%E6%B8%85%E5%8D%95/">03-备忘清单</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/LI07-%E8%8B%B1%E8%AF%AD/">LI07-英语</a></span></div><div class="content">-yy: 表状态
+
+
+
+Example
+
+
+
+meser(守财奴)+y =&gt; mesery a.悲惨的,痛苦的
+
+
+
+
+
+
+
+
+-logicallogical, a.合乎逻辑的,必然的
+-logical: 表xxx学科,研究领域
+
+
+
+Example
+
+
+
+geo(地理) +  logical(逻辑)    =&gt; n.地质学
+
+
+psycho(心理) + logical(逻辑)  =&gt; n.心理学
+
+
+
+
+
+-ous-ous: 表示很多的的性质
+🙋‍♂️能够变为一个事物的性质,说明很常见,固有,频繁
+组词逻辑: 一个非形容词的词( 名词 )组成上末尾存在 r,d,,i,想要变成 形容词则可加 ous 
+发音音标:  /əs/
+
+
+
+Example
+
+
+
+danger(危险) + ous =&gt; a.危险的 (很多危险)
+
+
+humor(滑稽) + ous =&gt; a.幽默的(很多滑稽)
+
+
+vary(变化) + ous a.变化的,多样的(很多变)
+
+
+number(数量) + ous =&gt; a.众多的,许多的
+
+
+⚠️ 注意不是所有 -ous结构都是 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/5735.html" title="Hexo插件使用合集">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/martinniee/hexoBlogImg/img/1601125086128.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo插件使用合集"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/5735.html" title="Hexo插件使用合集">Hexo插件使用合集</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-01T17:44:26.000Z" title="发表于 2021-05-02 01:44:26">2021-05-02</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-01T17:44:26.000Z" title="更新于 2021-05-02 01:44:26">2021-05-02</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/02-%E6%A1%88%E4%BE%8B%E6%95%99%E7%A8%8B/">02-案例教程</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/TO05-%E6%8F%92%E4%BB%B6%E5%B7%A5%E5%85%B7/">TO05-插件工具</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/TE01-Hexo/">TE01-Hexo</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/TE08-Hexo-butterfly/">TE08-Hexo-butterfly</a></span></div><div class="content">常用命令1、查看插件列表
+1npm list
+
+2、卸载插件
+1npm  uninstall &lt;插件名&gt;
+
+如 npm uninstall hexo-simple-mindmap 就是删除 hexo-simple-mindmap 插件
+3、更新插件
+1npm outdated
+
+
+hexo-permalink-pinyin作用: 中文转拼音,可以防止因为文件名中文导致网页链接显示中文乱码而访问不了网页
+
+如果你的文章名称是中文的，那么 Hexo 默认生成的永久链接也会有中文，这样不利于 SEO，且 gitment 评论对中文链接也不支持。我们可以用 hexo-permalink-pinyin Hexo 插件使在生成文章时生成中文拼音的永久链接。
+注：除了此插件外，hexo-abbrlink 插件也可以生成非中文的链接。
+
+1、安装
+1npm -i hexo-permalink-pinyin --save
+
+2、配置
+博客根目录_config.yml最下添加
+1234# 中文转拼音permalink_pinyin:  enable: true  separator: '-'  ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/66f7.html" title="hexo-butterfly主题数据可视化">     <img class="post_bg" src="https://z3.ax1x.com/2021/05/10/gtwSzD.md.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hexo-butterfly主题数据可视化"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/66f7.html" title="hexo-butterfly主题数据可视化">hexo-butterfly主题数据可视化</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-01T09:02:40.000Z" title="发表于 2021-05-01 17:02:40">2021-05-01</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-01T09:02:40.000Z" title="更新于 2021-05-01 17:02:40">2021-05-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/02-%E6%A1%88%E4%BE%8B%E6%95%99%E7%A8%8B/">02-案例教程</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/TE01-Hexo/">TE01-Hexo</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/TE08-Hexo-butterfly/">TE08-Hexo-butterfly</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/CS03-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/">CS03-数据可视化</a></span></div><div class="content">本文章针对hexo-butterfly主题设置,其他主题不保证能成功
+⚠️ 做较大改动之前,请备份,或者使用git保留当前版本
+1. 下载插件1npm install hexo-charts -S
+
+
+
+2. 使用注意！下面的标签可以放到post和不含type的page的md文件中，含有type的page请自行修改相应的模板文件，这个就不要来问我了，因为每个人用的主题可能都不一样，建议去问主题的作者。
+
+
+
+
+
+2.1. 配置针对上述问题,对于 butterfly主题可以进行设置,如下
+1、将文章发布统计图添加到归档页面
+在主题目录/Butterfly/layout/archive.pug文件的#archive下面添加一行#posts-chart, 新添加的比上一行多缩进两个空格。
+1234block content  include .&#x2F;includes&#x2F;mixins&#x2F;article-sort.pug  #archive    #posts-chart
+
+2、将标签统计图和分类统计图分别添加到标签和分类页面
+编辑主题目录/Butterfly/layout ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/2409.html" title="给博客添加GitHub badge">     <img class="post_bg" src="https://z3.ax1x.com/2021/05/10/gtwSzD.md.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="给博客添加GitHub badge"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/2409.html" title="给博客添加GitHub badge">给博客添加GitHub badge</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-01T00:46:57.000Z" title="发表于 2021-05-01 08:46:57">2021-05-01</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-01T00:46:57.000Z" title="更新于 2021-05-01 08:46:57">2021-05-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/03-%E5%A4%87%E5%BF%98%E6%B8%85%E5%8D%95/">03-备忘清单</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/TE02-GitHub/">TE02-GitHub</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/TE01-Hexo/">TE01-Hexo</a></span></div><div class="content">添加 GitHub badge
+格式:
+12&lt;a href&#x3D;&quot;\[可选\]添加要跳转的链接&quot;&gt; &lt;img style&#x3D;&quot;cursor:pointer&quot; title&#x3D;&quot;\[可选\]添加鼠标悬浮链接后的介绍&quot; alt&#x3D;&quot;[添加图片的描述]&quot; src&#x3D;&quot;https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;填显示的文字-填显示的文字-颜色&quot;&#x2F;&gt;&lt;&#x2F;a&gt;
+
+ 
+
+实例:
+123&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;hexo.io&#x2F;zh-cn&#x2F;&quot;&gt; &lt;img style&#x3D;&quot;cursor:pointer&quot; title&#x3D;&quot;由Hexo强力驱动&quot; alt&#x3D;&quot;APM&quot; src&#x3D;& ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/f949.html" title="hexo-butterfly特殊功能使用模板">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/martinniee/hexoBlogImg/img/Cache_58c64d536be4106e..jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hexo-butterfly特殊功能使用模板"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/f949.html" title="hexo-butterfly特殊功能使用模板">hexo-butterfly特殊功能使用模板</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-04-30T17:38:15.000Z" title="发表于 2021-05-01 01:38:15">2021-05-01</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-04-30T17:38:15.000Z" title="更新于 2021-05-01 01:38:15">2021-05-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/02-%E6%A1%88%E4%BE%8B%E6%95%99%E7%A8%8B/">02-案例教程</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/TE01-Hexo/">TE01-Hexo</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/TE08-Hexo-butterfly/">TE08-Hexo-butterfly</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/LI14-%E6%A8%A1%E6%9D%BF/">LI14-模板</a></span></div><div class="content">标签块样式1234567891011121314151617181920# 格式&#123;% note [标志] [效果] %&#125;[内容]&#123;% endnote %&#125;# 实例&#123;% note disabled %&#125;默認 提示塊標籤&#123;% endnote %&#125;# 实例&#123;% note default disabled %&#125;default 提示塊標籤&#123;% endnote %&#125;# 实例&#123;% note success disabled %&#125;success 提示塊標籤&#123;% endnote %&#125;
+
+效果:
+1、警告提示标签
+123&#123;% note warning flat %&#125;warning 警告提示标签&#123;% endnote %&#125;
+
+效果:
+warning 警告提示标签
+
+
+
+
+2、visa标志
+123&#123;% note &#39;fab fa-cc-visa&#39; simple %&#125;你是刷 Visa ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/776b.html" title="关于博客的使用和文章的管理">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/martinniee/hexoBlogImg/img/1601124712852.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于博客的使用和文章的管理"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/776b.html" title="关于博客的使用和文章的管理">关于博客的使用和文章的管理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-04-30T16:53:41.000Z" title="发表于 2021-05-01 00:53:41">2021-05-01</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-04-30T16:53:41.000Z" title="更新于 2021-05-01 00:53:41">2021-05-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/03-%E5%A4%87%E5%BF%98%E6%B8%85%E5%8D%95/">03-备忘清单</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/LI02-%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C/">LI02-文章写作</a></span></div><div class="content">文章管理和约束内容平台约束随着文章的个数越来越多,对文章的管理成为一个难题
+需要对一些内容做出约束
+
+文章内容的约束: 加强文章的层次性,结构性
+文章形式的模板化: 适当的做出模板化的约束,规范,使得以理解,接受
+文章编写平台的选取规则
+
+1、掘金:掘金主页▶
+
+内容: web前端
+
+2、CSDN:CSDN主页▶
+
+内容: 数据结构和算法,计算机底层知识
+
+3、博客园:博客园主页▶
+
+内容:前后端,日常,杂谈,编程踩坑(异常,报错)
+
+4、知乎:知乎官网▶
+
+软件技巧,使用技巧,Office办公 (便于公开展示的内容)
+
+5、GitHub:Github官网▶
+
+代码备份,文件储存
+
+6、segmentfault: segmentfault主页▶
+
+异常处理,错误处理,错误日志
+
+hexo博客的作用因其 个人博客的定制化优势,使用tag定位,搜索,查找
+建议,适合公开的内容就存放到第三方博客通过URL引用即可,比较个人的内容就存放到个人博客
+
+利用好 URL 的引用功能,到达「 一次书写,各地引用」访问
+用Hexo写的博客尽量不用到图片
+含图片的博客选择其他平台
+
+Hexo更多的是导航站 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/2865.html" title="云盘推荐和使用">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/martinniee/hexoBlogImg/img/1601124698634.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="云盘推荐和使用"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/2865.html" title="云盘推荐和使用">云盘推荐和使用</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-04-30T16:31:57.000Z" title="发表于 2021-05-01 00:31:57">2021-05-01</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-04-30T16:31:57.000Z" title="更新于 2021-05-01 00:31:57">2021-05-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/06-%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/">06-工具网站</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/TO07-%E7%BD%91%E7%9B%98%E5%B7%A5%E5%85%B7/">TO07-网盘工具</a></span></div><div class="content">国内蓝奏云访问: 官网▶
+特点: 无空间限制,不限下载速度,限制文件大小(100M/个)
+文叔叔访问: 官网▶
+特点: 免费空间20G(注册),不限速,可不注册传文件
+超星云盘访问: 官网▶
+特点: 免费空间150G,需下载客户端,无限速,专为教学工作
+天翼云盘访问: 官网▶
+特点: 免费60GB,不限速,(&gt;100M)下载需登录
+国外trainbt没试过
+访问: 官网▶
+特点: 免费5T
+相关推荐:
+
+分享50个免费的云盘网盘服务——拥有无限储存空间
+
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/9298.html" title="学习工作必备软件工具">     <img class="post_bg" src="https://i.bmp.ovh/imgs/2021/05/7e03a47623335305.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="学习工作必备软件工具"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/9298.html" title="学习工作必备软件工具">学习工作必备软件工具</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-04-30T13:59:09.000Z" title="发表于 2021-04-30 21:59:09">2021-04-30</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-04-30T13:59:09.000Z" title="更新于 2021-04-30 21:59:09">2021-04-30</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/06-%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/">06-工具网站</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/TO04-%E5%86%99%E4%BD%9C%E5%B7%A5%E5%85%B7/">TO04-写作工具</a></span></div><div class="content">分析
+
+学习需要收集信息,收集信息就需要笔记记录
+
+单纯的收集,草稿,笔记工具就是 OneNote2016,其特色是复制网页内容粘贴为原格式,适合快速收集内容
+
+超过单纯的收集就是整理,笔记的整理需要具备完整的格式体系,随着文章的内容增多,分类,搜索,关联笔记的需求越加重要
+
+
+软件功能的分析
+记录整理onenote2016
+定义:  一个办公程序 / 笔记管理应用 / 一个 「笔记本」
+
+作用:  办公 / 学习 / 生活
+
+会议章程, 分享共享, 制定计划
+笔记本,表格组织,web剪辑,幻灯片记录(手写),灵感记录
+网页剪藏,日记,摘录,备忘录
+
+
+特点: 任意位置编辑,记录笔记 / 同office其他办公软件的布局生态 ,默认onedrive同步+本地备份机制 / 复制网页内容保留格式 ,复制内容粘贴变图片
+
+应用: 做系统全面(目录结构)的笔记 / 做草稿文档
+
+页面可容纳内容无限,分页,分区够
+无限的页面,保留其他处的格式,加 office办公生态,支持富文本编辑
+
+
+缺点: 不支持markdwon / 缺乏检索机制
+
+由于页面空间过于大,加上太过随意,结构性不强,容易陷入页 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/c8cc.html" title="虚拟机安装macOS黑苹果">     <img class="post_bg" src="https://i.bmp.ovh/imgs/2021/05/e29c167b4c14b192.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="虚拟机安装macOS黑苹果"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/c8cc.html" title="虚拟机安装macOS黑苹果">虚拟机安装macOS黑苹果</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-04-30T05:00:06.000Z" title="发表于 2021-04-30 13:00:06">2021-04-30</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-04-30T05:00:06.000Z" title="更新于 2021-04-30 13:00:06">2021-04-30</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/02-%E6%A1%88%E4%BE%8B%E6%95%99%E7%A8%8B/">02-案例教程</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/TE03-MacOS/">TE03-MacOS</a></span></div><div class="content">参考:
+
+全网最详细的VMware虚拟机安装MacOS系统教程，没有之一！！！附全部资源
+
+前言使用Vmware安装macOS虚拟机系统, Vmware默认支持安装macOS,所以需要解锁工具解锁VMware
+环境准备
+宿主机 windows 10 lenovo Yoga 14sARH 2021 
+
+虚拟机 VMware15.5.5 build-16285975 | VMware安装教程▶
+
+
+⚠️听说虚拟机版本太高可能安装不了(&gt;16.x.x.x),建议使用VMware 15.0.x.x版本
+准备文件/工具(3个)
+所需工具
+VM解锁工具: MK-Unlocker 或  Unlocker_v3.0.3 
+MacOS Mojave 10.14懒人包
+优化卡顿工具(beamoff)
+
+下载方式
+
+全部下载 提取码：txgp 
+
+部分下载
+
+解锁工具（MK-Unlocker + Unlocker_v3.0.3）【提取码：txgp 】
+
+MacOS镜像懒人包(MacOS Mojave 10.14.6)【提取码：9e60 】
+
+优化卡顿工具（beamoff【提取码：y7vh】
+
+
+
+
+安 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/1ad6.html" title="english | 英语翻译作文词组短语表达积累">     <img class="post_bg" src="https://ae03.alicdn.com/kf/Uad92a545e3984752af46861bf962fc36f.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="english | 英语翻译作文词组短语表达积累"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/1ad6.html" title="english | 英语翻译作文词组短语表达积累">english | 英语翻译作文词组短语表达积累</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-03-30T14:58:36.000Z" title="发表于 2021-03-30 22:58:36">2021-03-30</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-03-30T14:58:36.000Z" title="更新于 2021-03-30 22:58:36">2021-03-30</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/03-%E5%A4%87%E5%BF%98%E6%B8%85%E5%8D%95/">03-备忘清单</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/LI07-%E8%8B%B1%E8%AF%AD/">LI07-英语</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/LI08-CET4/">LI08-CET4</a></span></div><div class="content">
+ 同义词更新，积累对比，相同含义表达，取最优
+ 主要来源(major souce from): 翻译,阅读,作文,日常
+
+一般格式:
+12345year-monthword...phrase...
+
+
+
+
+
+2020-3月份1、单词
+extremely - 极度地,极其地 (表示程度上的 “很”)
+nowadays - 现在
+increase , grow - 增长
+dish - 碟子,一道菜 区分 meal - 一餐,一顿饭
+dinner - 用餐者(饭桌上吃饭的人)
+internalize - a.使内化的 
+cultivate - v.培育,培养(能力) ; 栽培植物
+encounter - v.遭遇,碰见(偶尔) ,类似 come accross (意外碰见)
+development - n.发展,提高,类似的 improve - v.提高,提升
+especially - adv.尤其地,特别地 （表示一种 “强调”)
+2、词组
+at an astonishing rate in … - 以惊人的速率
+literary works - 文学作品
+(in) other form ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/3b10.html" title="youtube视频的下载方法推荐 | youtube">     <img class="post_bg" src="https://z3.ax1x.com/2021/05/10/gtaf3D.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="youtube视频的下载方法推荐 | youtube"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/3b10.html" title="youtube视频的下载方法推荐 | youtube">youtube视频的下载方法推荐 | youtube</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-03-27T06:25:26.000Z" title="发表于 2021-03-27 14:25:26">2021-03-27</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-03-27T06:25:26.000Z" title="更新于 2021-03-27 14:25:26">2021-03-27</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/02-%E6%A1%88%E4%BE%8B%E6%95%99%E7%A8%8B/">02-案例教程</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/TE10-Yoututbe/">TE10-Yoututbe</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/LI15-%E4%B8%8B%E8%BD%BD/">LI15-下载</a></span></div><div class="content">在线网站解析1、 https://y2mate.is/
+quick tips: 在浏览器栏中，输入youtube视频链接，在 “youtube”后面，输入 “pi”
+
+
+2、https://www.y2mate.info/youtube-converter/
+3、https://9convert.com/en2
+修改链接youtube原视频的网址后添加字符
+my / x2 / pi /pp
+使用插件查看更多&gt;&gt;&gt;
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/58cd.html" title="Elizabeth jane bishop | mv">     <img class="post_bg" src="https://z3.ax1x.com/2021/05/10/gtwSzD.md.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Elizabeth jane bishop | mv"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/58cd.html" title="Elizabeth jane bishop | mv">Elizabeth jane bishop | mv</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-03-27T06:11:52.000Z" title="发表于 2021-03-27 14:11:52">2021-03-27</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-03-27T06:11:52.000Z" title="更新于 2021-03-27 14:11:52">2021-03-27</time></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/mv/">mv</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/Elizabeth-jane-bishop/">Elizabeth jane bishop</a></span></div><div class="content"> </div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/e823.html" title="Avril lavigne | mv">     <img class="post_bg" src="https://ae02.alicdn.com/kf/Udde384fb8707489aa0273e527b81948cG.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Avril lavigne | mv"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/e823.html" title="Avril lavigne | mv">Avril lavigne | mv</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-03-27T06:07:01.000Z" title="发表于 2021-03-27 14:07:01">2021-03-27</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-03-27T06:07:01.000Z" title="更新于 2021-03-27 14:07:01">2021-03-27</time></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Avril-Lavigne/">Avril Lavigne</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/mv/">mv</a></span></div><div class="content"> 
+
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/dcb2.html" title="2021免费图床推荐 | 图床">     <img class="post_bg" src="https://z3.ax1x.com/2021/03/27/6xxBZV.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2021免费图床推荐 | 图床"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/dcb2.html" title="2021免费图床推荐 | 图床">2021免费图床推荐 | 图床</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-03-27T05:42:33.000Z" title="发表于 2021-03-27 13:42:33">2021-03-27</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-03-27T05:42:33.000Z" title="更新于 2021-03-27 13:42:33">2021-03-27</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/06-%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/">06-工具网站</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/TO02-%E5%9B%BE%E5%BA%8A/">TO02-图床</a></span></div><div class="content">
+
+
+路过图床
+
+免费图片上传
+高速稳定，全球CDN加速
+支持外链，原图保存
+最大支持单张 10MB
+官网: https://imgtu.com/
+
+SM.MS
+
+付费+收费
+单次5MB，10张图片
+官网: https://sm.ms/
+
+聚合图床
+
+官网: https://www.superbed.cn/
+
+ImgURL
+
+游客限制每日 上传10张, 单张图片不超过5M
+
+
+更多文章，请看: 最全的图床集合（国内外，站长必备）
+综合图床: http://tu.wlxiu.cn/
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/204f.html" title="Hexo | hexo-butterfly主题配置大合集">     <img class="post_bg" src="https://i.bmp.ovh/imgs/2021/05/c3f941acbe02eef6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo | hexo-butterfly主题配置大合集"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/204f.html" title="Hexo | hexo-butterfly主题配置大合集">Hexo | hexo-butterfly主题配置大合集</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-26T06:29:39.000Z" title="发表于 2020-09-26 14:29:39">2020-09-26</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-09-26T06:29:39.000Z" title="更新于 2020-09-26 14:29:39">2020-09-26</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/02-%E6%A1%88%E4%BE%8B%E6%95%99%E7%A8%8B/">02-案例教程</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/TE01-Hexo/">TE01-Hexo</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/TE08-Hexo-butterfly/">TE08-Hexo-butterfly</a></span></div><div class="content">hexo-butterfly-version-3.1.1使用大合集参考主题开发者官方文档：官方文档
+注意
+12341. butterfly版本是 3.1.12. 配置文件，有不同之处，需要分辨，推荐重新花时间大改3. 若想升级，在博客主题目录下 git pull (前提你是通过git clone下来的)4. 若想大的改动，最好记录下来
+
+
+
+
+目录
+链接
+
+
+
+配置1
+主题页面
+
+
+配置2
+主题配置1
+
+
+Front-matter121. Front-matter 是档案最上方以 --- 分隔的区域，用于指定个别档案的变数。2. 如果标注可选的参数，可根据自己需要添加，不用全部都写在 markdown 里
+
+
+
+page Front-matter123456789101112131415---title:date:updated:type:comments:description:keywords:top_img:mathjax:katex:aside:aplayer:highlight_shrink:---
+
+
+
+
+
+写法
+说明
+
+
+
+title
+【必须】页面标题
+
+
+date
+【必 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/9e9c.html" title="Hexo |  hexo-matery-Theme">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/martinniee/hexoBlogImg/img/1601125000003.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo |  hexo-matery-Theme"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/9e9c.html" title="Hexo |  hexo-matery-Theme">Hexo |  hexo-matery-Theme</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-17T03:07:56.000Z" title="发表于 2020-09-17 11:07:56">2020-09-17</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-09-17T03:07:56.000Z" title="更新于 2020-09-17 11:07:56">2020-09-17</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/02-%E6%A1%88%E4%BE%8B%E6%95%99%E7%A8%8B/">02-案例教程</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/TE01-Hexo/">TE01-Hexo</a></span></div><div class="content">基础篇下载主题
+下载离线包
+ 下载 master分支稳定版本 解压缩，将hexo-theme-matery文件夹复制到theme文件夹中
+
+git clone
+  git clone https://github.com/bkinkfox/hexo-theme-matery.git
+
+
+切换主题1 .修改Hexo 根目录❗
+ .config.yml中的theme 值为 matery (要和主题文件名同，这一步是修改了原来的主题文件名hexo-theme-matery为 matery，不修改也可以 )
+2 .【.config.yml】 文件其它修改建议
+
+修改url 为 网站 主 URL , 如 http://xxx.github.io
+修改 per_page分页条数为6的倍数 ，12，18，这样好显示
+如是 中文用户，切换language 值为 zh-CN
+
+新建页面categories分类123if(source目录下没有categories/index.html文件):  gitbash命令行输入 hexo new page "categories"  编辑此文件 source/c ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/4b97.html" title="GitHub |  github上的html文件如何显示效果而不是源代码?">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/martinniee/hexoBlogImg/img/1601125000003.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GitHub |  github上的html文件如何显示效果而不是源代码?"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/4b97.html" title="GitHub |  github上的html文件如何显示效果而不是源代码?">GitHub |  github上的html文件如何显示效果而不是源代码?</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-15T16:00:22.000Z" title="发表于 2020-09-16 00:00:22">2020-09-16</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-09-15T16:00:22.000Z" title="更新于 2020-09-16 00:00:22">2020-09-16</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/03-%E5%A4%87%E5%BF%98%E6%B8%85%E5%8D%95/">03-备忘清单</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/TE02-GitHub/">TE02-GitHub</a></span></div><div class="content">问题描述如何打开从本地上传到github的html文件，显示预览效果，而不是源代码? (非本地，github上的 .html也行)
+方法1
+
+复制github项目的 .html文件的链接地址
+打开 https://htmlpreview.github.io/ 网址
+输入复制的 .html文件的链接即可
+
+方法二
+
+复制 .html文件的github链接地址
+
+粘贴到浏览器输入栏，在最面加上 htmlpreview.github.io/(本质和方法一一样的)
+
+
+⚠️ 这个github.io/ 域名是github的一个用于显示文档的页面Page
+方法三
+
+进入github项目仓库页面
+点击【setting】
+找到【githubPage】板块，选择【source】为 “master branch” ，后保存【save】 或者 在【Theme Choose】处，点击【change Theme】 进入页面后保存主题即可
+
+
+若成功，【githubPage】板块页面会出现一链接 ，连接后加上 .hmtl的文件名 (xxx.html) ，即可点击跳转到.html文件的显示网页页面
+如 https: ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Nathan Martin</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length_num">57</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length_num">40</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length_num">6</div></a></div></div><a class="button--animated" id="card-info-btn" href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="/atom.xml" target="_blank" title=""><i class="fa fa-rss"></i></a><a class="social-icon" href="https://github.com/martinniee" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:https://yang47984@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://www.zhihu.com/" target="_blank" title="知乎"><i class="fab fa-zhihu"></i></a><a class="social-icon" href="https://blog.csdn.net/qq_44994842?spm=1001.2101.3001.5343" target="_blank" title="CSDN"><i class="fab fa-cuttlefish"></i></a><a class="social-icon" href="https://juejin.cn/" target="_blank" title="掘金"><i class="fas fa-sort-amount-down"></i></a></div></div></div><div class="sticky_layout"><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">Welcome to my HOME!  <br/><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener"><img  style="cursor:pointer" title="由Hexo强力驱动" alt="APM" src="https://img.shields.io/badge/hexo-4.2.0-orange"></a><a href="https://pages.github.com/" target="_blank" rel="noopener"><img  style="cursor:pointer" title="静态网页托管于GithubPage" alt="APM" src="https://img.shields.io/badge/repo-github-brightgreen"></a><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><img  style="cursor:pointer" title="站点使用 Butterfly 3.2.0-rc2 主题" alt="APM" src="https://img.shields.io/badge/Butterfly-3.2.0-blue"></a><a href="http://www.jsdelivr.com/" target="_blank" rel="noopener"><img  style="cursor:pointer" title="jsDelivr 提供 CDN 加速服务" alt="APM" src="https://img.shields.io/badge/cdn-jsDlivr-red"></a></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/69bf.html" title="文章写作 | 常用标签和分类模板"><img src="https://i.bmp.ovh/imgs/2021/05/5cc0500b27705589.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="文章写作 | 常用标签和分类模板"/></a><div class="content"><a class="title" href="/posts/69bf.html" title="文章写作 | 常用标签和分类模板">文章写作 | 常用标签和分类模板</a><time datetime="2021-07-12T13:27:49.000Z" title="更新于 2021-07-12 21:27:49">2021-07-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/87b8.html" title="文章写作 | 文章常用模板"><img src="https://z3.ax1x.com/2021/05/10/gtweW8.md.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="文章写作 | 文章常用模板"/></a><div class="content"><a class="title" href="/posts/87b8.html" title="文章写作 | 文章常用模板">文章写作 | 文章常用模板</a><time datetime="2021-07-12T12:52:32.000Z" title="更新于 2021-07-12 20:52:32">2021-07-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/4cbe.html" title="Demo | 自创小工具(合集)"><img src="https://cdn.jsdelivr.net/gh/martinniee/hexoBlogImg/img/20200926210841.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Demo | 自创小工具(合集)"/></a><div class="content"><a class="title" href="/posts/4cbe.html" title="Demo | 自创小工具(合集)">Demo | 自创小工具(合集)</a><time datetime="2021-07-12T12:46:10.000Z" title="更新于 2021-07-12 20:46:10">2021-07-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/af43.html" title="JSDemo | 获取markdown形式链接"><img src="https://i.bmp.ovh/imgs/2021/05/5acd92d7db155a99.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JSDemo | 获取markdown形式链接"/></a><div class="content"><a class="title" href="/posts/af43.html" title="JSDemo | 获取markdown形式链接">JSDemo | 获取markdown形式链接</a><time datetime="2021-07-11T09:25:52.000Z" title="更新于 2021-07-11 17:25:52">2021-07-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/8baa.html" title="网站 | 工具网站合集"><img src="https://z3.ax1x.com/2021/05/10/gtaf3D.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="网站 | 工具网站合集"/></a><div class="content"><a class="title" href="/posts/8baa.html" title="网站 | 工具网站合集">网站 | 工具网站合集</a><time datetime="2021-06-27T04:07:42.000Z" title="更新于 2021-06-27 12:07:42">2021-06-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/9ab4.html" title="网站 | 这些网站,让你搜书变简单"><img src="https://cdn.jsdelivr.net/gh/martinniee/hexoBlogImg/img/20200926210841.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="网站 | 这些网站,让你搜书变简单"/></a><div class="content"><a class="title" href="/posts/9ab4.html" title="网站 | 这些网站,让你搜书变简单">网站 | 这些网站,让你搜书变简单</a><time datetime="2021-06-23T13:51:10.000Z" title="更新于 2021-06-23 21:51:10">2021-06-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/4b75.html" title="日程 | 计划安排"><img src="https://img-blog.csdnimg.cn/20200628173149624.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="日程 | 计划安排"/></a><div class="content"><a class="title" href="/posts/4b75.html" title="日程 | 计划安排">日程 | 计划安排</a><time datetime="2021-06-22T09:31:29.000Z" title="更新于 2021-06-22 17:31:29">2021-06-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/89a9.html" title="网站 | 奇怪网站系列(1)"><img src="https://img-blog.csdnimg.cn/20200628173149624.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="网站 | 奇怪网站系列(1)"/></a><div class="content"><a class="title" href="/posts/89a9.html" title="网站 | 奇怪网站系列(1)">网站 | 奇怪网站系列(1)</a><time datetime="2021-06-22T08:21:51.000Z" title="更新于 2021-06-22 16:21:51">2021-06-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/fbc8.html" title="英语 | CET4/6 | 写作学习路线和方法"><img src="https://cdn.jsdelivr.net/gh/martinniee/hexoBlogImg/img/1601125126541.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="英语 | CET4/6 | 写作学习路线和方法"/></a><div class="content"><a class="title" href="/posts/fbc8.html" title="英语 | CET4/6 | 写作学习路线和方法">英语 | CET4/6 | 写作学习路线和方法</a><time datetime="2021-06-22T04:33:15.000Z" title="更新于 2021-06-22 12:33:15">2021-06-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/f634.html" title="知乎 | 计算机类文章,资讯"><img src="https://z3.ax1x.com/2021/05/10/gtaf3D.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="知乎 | 计算机类文章,资讯"/></a><div class="content"><a class="title" href="/posts/f634.html" title="知乎 | 计算机类文章,资讯">知乎 | 计算机类文章,资讯</a><time datetime="2021-06-21T05:34:05.000Z" title="更新于 2021-06-21 13:34:05">2021-06-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/f5a1.html" title="英语 | 词汇专题(5) | 短语表达和替换"><img src="https://cdn.jsdelivr.net/gh/martinniee/hexoBlogImg/img/1601124712852.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="英语 | 词汇专题(5) | 短语表达和替换"/></a><div class="content"><a class="title" href="/posts/f5a1.html" title="英语 | 词汇专题(5) | 短语表达和替换">英语 | 词汇专题(5) | 短语表达和替换</a><time datetime="2021-06-21T04:39:25.000Z" title="更新于 2021-06-21 12:39:25">2021-06-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/284d.html" title="英语 | cet4应试技巧和方法"><img src="https://cdn.jsdelivr.net/gh/martinniee/hexoBlogImg/img/Cache_-c56d45df6e61af4..jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="英语 | cet4应试技巧和方法"/></a><div class="content"><a class="title" href="/posts/284d.html" title="英语 | cet4应试技巧和方法">英语 | cet4应试技巧和方法</a><time datetime="2021-06-21T03:02:26.000Z" title="更新于 2021-06-21 11:02:26">2021-06-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/cee5.html" title="网站 | 前端帮助网站"><img src="https://cdn.jsdelivr.net/gh/martinniee/hexoBlogImg/img/1601125064685.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="网站 | 前端帮助网站"/></a><div class="content"><a class="title" href="/posts/cee5.html" title="网站 | 前端帮助网站">网站 | 前端帮助网站</a><time datetime="2021-06-21T00:58:48.000Z" title="更新于 2021-06-21 08:58:48">2021-06-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/c554.html" title="Demo | 爬取youtube个人栏信息(头像+频道简介)"><img src="https://i.bmp.ovh/imgs/2021/05/c3f941acbe02eef6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Demo | 爬取youtube个人栏信息(头像+频道简介)"/></a><div class="content"><a class="title" href="/posts/c554.html" title="Demo | 爬取youtube个人栏信息(头像+频道简介)">Demo | 爬取youtube个人栏信息(头像+频道简介)</a><time datetime="2021-06-20T03:07:03.000Z" title="更新于 2021-06-20 11:07:03">2021-06-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/e971.html" title="傅佩荣 | 先秦儒家哲学(1) "><img src="https://cdn.jsdelivr.net/gh/martinniee/hexoBlogImg/img/1601125152364.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="傅佩荣 | 先秦儒家哲学(1) "/></a><div class="content"><a class="title" href="/posts/e971.html" title="傅佩荣 | 先秦儒家哲学(1) ">傅佩荣 | 先秦儒家哲学(1) </a><time datetime="2021-06-20T02:29:51.000Z" title="更新于 2021-06-20 10:29:51">2021-06-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/c391.html" title="学习之道"><img src="https://i.bmp.ovh/imgs/2021/05/7e03a47623335305.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="学习之道"/></a><div class="content"><a class="title" href="/posts/c391.html" title="学习之道">学习之道</a><time datetime="2021-06-18T11:23:45.000Z" title="更新于 2021-06-18 19:23:45">2021-06-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/b921.html" title="美剧 | 美剧在线看"><img src="https://cdn.jsdelivr.net/gh/martinniee/hexoBlogImg/img/1601125034158.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="美剧 | 美剧在线看"/></a><div class="content"><a class="title" href="/posts/b921.html" title="美剧 | 美剧在线看">美剧 | 美剧在线看</a><time datetime="2021-06-18T06:15:36.000Z" title="更新于 2021-06-18 14:15:36">2021-06-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/de2e.html" title=" GitHub | jsDeliver+github使用免费的cdn服务"><img src="https://img-blog.csdnimg.cn/2020062609082233.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt=" GitHub | jsDeliver+github使用免费的cdn服务"/></a><div class="content"><a class="title" href="/posts/de2e.html" title=" GitHub | jsDeliver+github使用免费的cdn服务"> GitHub | jsDeliver+github使用免费的cdn服务</a><time datetime="2021-06-18T00:53:48.000Z" title="更新于 2021-06-18 08:53:48">2021-06-18</time></div></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/01-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">01-学习笔记</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/02-%E6%A1%88%E4%BE%8B%E6%95%99%E7%A8%8B/"><span class="card-category-list-name">02-案例教程</span><span class="card-category-list-count">15</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/03-%E5%A4%87%E5%BF%98%E6%B8%85%E5%8D%95/"><span class="card-category-list-name">03-备忘清单</span><span class="card-category-list-count">21</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/05-%E6%97%A5%E5%BF%97%E9%9A%8F%E7%AC%94/"><span class="card-category-list-name">05-日志随笔</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/06-%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/"><span class="card-category-list-name">06-工具网站</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/07-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/"><span class="card-category-list-name">07-学习资源</span><span class="card-category-list-count">1</span></a></li>
+            
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Avril-Lavigne/" style="font-size: 1.1em; color: rgb(45, 30, 101)">Avril Lavigne</a><a href="/tags/mv/" style="font-size: 1.18em; color: rgb(38, 41, 130)">mv</a><a href="/tags/TO02-%E5%9B%BE%E5%BA%8A/" style="font-size: 1.1em; color: rgb(163, 1, 32)">TO02-图床</a><a href="/tags/CS01-%E5%8E%9F%E5%88%9B%E5%B0%8F%E5%B7%A5%E5%85%B7/" style="font-size: 1.1em; color: rgb(35, 15, 93)">CS01-原创小工具</a><a href="/tags/Elizabeth-jane-bishop/" style="font-size: 1.1em; color: rgb(73, 183, 40)">Elizabeth jane bishop</a><a href="/tags/TE05-Windows/" style="font-size: 1.1em; color: rgb(37, 54, 14)">TE05-Windows</a><a href="/tags/TO07-%E7%BD%91%E7%9B%98%E5%B7%A5%E5%85%B7/" style="font-size: 1.1em; color: rgb(90, 184, 10)">TO07-网盘工具</a><a href="/tags/LI02-%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C/" style="font-size: 1.18em; color: rgb(153, 144, 146)">LI02-文章写作</a><a href="/tags/LI01-%E5%86%99%E4%BD%9C%E6%A8%A1%E6%9D%BF/" style="font-size: 1.18em; color: rgb(45, 110, 188)">LI01-写作模板</a><a href="/tags/TO04-%E5%86%99%E4%BD%9C%E5%B7%A5%E5%85%B7/" style="font-size: 1.1em; color: rgb(162, 76, 144)">TO04-写作工具</a><a href="/tags/TO05-%E6%8F%92%E4%BB%B6%E5%B7%A5%E5%85%B7/" style="font-size: 1.18em; color: rgb(198, 7, 56)">TO05-插件工具</a><a href="/tags/TE04-Google/" style="font-size: 1.1em; color: rgb(62, 177, 196)">TE04-Google</a><a href="/tags/%E8%AE%A1%E5%88%92%E5%AE%89%E6%8E%92/" style="font-size: 1.1em; color: rgb(83, 188, 59)">计划安排</a><a href="/tags/LI05-%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB/" style="font-size: 1.1em; color: rgb(141, 149, 18)">LI05-文章阅读</a><a href="/tags/%E7%9F%A5%E4%B9%8E/" style="font-size: 1.1em; color: rgb(95, 68, 146)">知乎</a><a href="/tags/TO06-%E6%90%9C%E4%B9%A6%E7%BD%91%E7%AB%99/" style="font-size: 1.1em; color: rgb(60, 71, 144)">TO06-搜书网站</a><a href="/tags/TO01-%E8%BD%AF%E4%BB%B6%E6%B8%85%E5%8D%95/" style="font-size: 1.1em; color: rgb(199, 4, 106)">TO01-软件清单</a><a href="/tags/TE03-%E5%A4%96%E8%AE%BE/" style="font-size: 1.1em; color: rgb(132, 102, 94)">TE03-外设</a><a href="/tags/LI03-%E8%AF%B4%E8%AF%B4/" style="font-size: 1.1em; color: rgb(5, 39, 71)">LI03-说说</a><a href="/tags/CS02-WebFrontEnd/" style="font-size: 1.1em; color: rgb(157, 171, 84)">CS02-WebFrontEnd</a><a href="/tags/TO08-%E5%B7%A5%E5%85%B7/" style="font-size: 1.26em; color: rgb(33, 38, 155)">TO08-工具</a><a href="/tags/TE06-Git/" style="font-size: 1.26em; color: rgb(191, 139, 8)">TE06-Git</a><a href="/tags/TE02-GitHub/" style="font-size: 1.34em; color: rgb(76, 148, 119)">TE02-GitHub</a><a href="/tags/LI07-%E8%8B%B1%E8%AF%AD/" style="font-size: 1.5em; color: rgb(180, 81, 166)">LI07-英语</a><a href="/tags/LI08-CET4/" style="font-size: 1.26em; color: rgb(22, 79, 142)">LI08-CET4</a><a href="/tags/TE07-CDN/" style="font-size: 1.1em; color: rgb(103, 139, 89)">TE07-CDN</a><a href="/tags/LI10-%E6%8A%80%E5%B7%A7/" style="font-size: 1.18em; color: rgb(190, 196, 18)">LI10-技巧</a><a href="/tags/LI06-%E7%BD%91%E7%AB%99/" style="font-size: 1.26em; color: rgb(134, 65, 127)">LI06-网站</a><a href="/tags/LI11-%E8%84%91%E5%9B%BE/" style="font-size: 1.1em; color: rgb(126, 57, 135)">LI11-脑图</a><a href="/tags/TE01-Hexo/" style="font-size: 1.42em; color: rgb(13, 26, 36)">TE01-Hexo</a><a href="/tags/TE08-Hexo-butterfly/" style="font-size: 1.34em; color: rgb(20, 12, 30)">TE08-Hexo-butterfly</a><a href="/tags/TE09-valine/" style="font-size: 1.1em; color: rgb(168, 128, 123)">TE09-valine</a><a href="/tags/CS03-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 1.1em; color: rgb(137, 143, 196)">CS03-数据可视化</a><a href="/tags/LI14-%E6%A8%A1%E6%9D%BF/" style="font-size: 1.1em; color: rgb(75, 79, 39)">LI14-模板</a><a href="/tags/LI13-%E5%9B%BD%E5%AD%A6%E4%BC%A0%E7%BB%9F/" style="font-size: 1.1em; color: rgb(135, 18, 14)">LI13-国学传统</a><a href="/tags/LI12-%E5%82%85%E4%BD%A9%E8%8D%A3/" style="font-size: 1.1em; color: rgb(130, 19, 143)">LI12-傅佩荣</a><a href="/tags/LI16-%E8%B5%84%E6%BA%90/" style="font-size: 1.1em; color: rgb(67, 45, 117)">LI16-资源</a><a href="/tags/TE03-MacOS/" style="font-size: 1.1em; color: rgb(6, 114, 131)">TE03-MacOS</a><a href="/tags/TE10-Yoututbe/" style="font-size: 1.1em; color: rgb(92, 65, 166)">TE10-Yoututbe</a><a href="/tags/LI15-%E4%B8%8B%E8%BD%BD/" style="font-size: 1.1em; color: rgb(151, 75, 166)">LI15-下载</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/07/"><span class="card-archive-list-date">七月 2021</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/06/"><span class="card-archive-list-date">六月 2021</span><span class="card-archive-list-count">19</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/05/"><span class="card-archive-list-date">五月 2021</span><span class="card-archive-list-count">21</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/04/"><span class="card-archive-list-date">四月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/03/"><span class="card-archive-list-date">三月 2021</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/07/"><span class="card-archive-list-date">七月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/04/"><span class="card-archive-list-date">四月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/02/"><span class="card-archive-list-date">二月 2020</span><span class="card-archive-list-count">1</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">57</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2020-01-06T16:00:00.000Z"></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">37.1k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-07-13T15:54:13.442Z"></div></div></div></div></div><div class="card-widget card-ip"><div class="card-content"><div class="item-headline"><i class="fa fa-user" aria-hidden="true"></i><span>当前访问用户</span></div><div class="ip_content">欢迎来自 <span class="p red">未知区域</span> 的小伙伴<br/>访问IP为： <span class="p cyan">未知IP</span><br/>浏览器版本：<span class="p blue">未知浏览器</span></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://img-blog.csdnimg.cn/20200503171928463.jpg)"><div id="footer-wrap"><div class="framework-info"><span>框架 </span><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener">Butterfly</a></div><div class="footer_custom_text">I can do better!</div><div class="timeDate"><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function subtitleType () {
+  $.getScript('http://yijuzhan.com/api/word.php?m=js', function () {
+    var con = str[0]
+    if (true) {
+      var from = '出自 ' + str[1]
+      var sub = "".length == 0 ? new Array() : "".split(',')
+      var both = sub.unshift(con, from)
+      var typed = new Typed('#subtitle', {
+        strings: sub,
+        startDelay: 300,
+        typeSpeed: 150,
+        loop: true,
+        backSpeed: 50,
+      })
+    } else {
+      document.getElementById('subtitle').innerHTML = con
+    }
+  })
+}
+
+if (true) {
+  if (typeof Typed === 'function') subtitleType()
+  else $.getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js', subtitleType)
+} else {
+  subtitleType()
+}
+</script><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    $.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js', function () {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'forest',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script src="/js/ip_content.js"></script><script src="/js/timeDate.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" async="async" mobile="true"></script></div><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

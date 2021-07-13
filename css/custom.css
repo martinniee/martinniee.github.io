@@ -1,0 +1,78 @@
+/* 博客文章中的图片样式 */
+.post-content img:not(.gallery-group-img, .flink-list-item){
+  border: 3px solid #e6e3e3;
+  width: 70%;
+  height: auto;
+  text-align: center;
+  border-radius: 20px;
+  transition:color 0.8s, border 0.8s;  
+}
+/* 改变了 color , border-color, ⚠️改变了的元素都要写全 */
+.post-content img:hover:not(.gallery-group-img){
+  border: 3px solid #26e730;
+  /* 设置transition过渡 */
+  width:70%;
+  height: auto;
+   
+}
+
+.post-content a:link, a:visited {
+ text-decoration: underline !important;
+
+}
+/* 博客mindmap插件css样式 */
+  blockquote.pullquote {
+  position: relative;
+  max-width: 100%;
+  font-size: 110%;
+}
+/* 强制隐藏多渲染出来的导图 */
+#kity_svg_24{
+  cursor: -webkit-grab;
+  display: none !important;  
+}
+/* markdown键盘样式 */
+#article-container kbd{
+  background: #6f42c12b;
+  border-radius: 11%;
+  padding: 2px 4px;
+  font-weight: bold;
+  font-family: serif;
+  border: solid 1px #c5c5c5;
+}
+/* 修改默认单行code样式 */
+/* article-container */
+.post-content code {
+  color: rgb(220 15 15) !important;
+  font-size: 13px;
+  background-color: #ffffff !important;
+  margin: auto 3px;
+  border-radius: 10px;
+  display: inline-block;
+  font-weight: bold;
+}
+/* 文本高亮 */
+/* 文章markdown复制按钮样式 */
+#get-btn{
+  outline: 0;
+  background: #ffffff;
+  background-color: #44c767;
+  border-radius: 28px;
+  border: 1px solid #18ab29;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Times New Roman;
+  font-size: 16px;
+  padding: 3px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
+
+}
+#get-btn:hover {
+	background-color:#5cbf2a;
+}
+#get-btn:active {
+	position:relative;
+	top:1px;
+}
