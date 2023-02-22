@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/martinniee/CDN/CSSDemo02.css"> -->
+    <title>youtube channel</title>
+	<style>
+	
+	  /* 重置样式 start */
+         *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-color: rgb(10, 10, 10);
+        }
+        ul > li{
+            list-style-type: none;
+        }
+        a{
+            text-decoration: none;
+            display: block;
+            height: 200px;
+            width: 200px;
+            text-align: center;
+        }
+        /* 重置样式 end */
+        #title{ 
+            
+            margin: 0px 5px;
+            font-weight: bold!;
+            font-size: 30px!;
+            color: rgb(255, 255, 255);
+        }
+        #nav{
+            /* 清除浮动的影响 */
+            overflow: hidden;
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+        #nav > ul > li{
+            float: left;
+            background: rgb(241, 61, 61);
+            border-radius: 12px;
+            margin: 17px;
+            width: 200px;
+            height: 124px;
+        }
+        /* 图片样式 start */
+        #nav > ul > li:hover  img{
+            opacity: 0;
+             /* 转换速度 */
+            transition: opacity 0.6s ease;
+        }
+        #nav   img{
+            display: block;  /* 变为 块元素  */
+            width: 77px;  /* 设置高度宽度 用于撑起父元素 */
+            /* 用于图片的居中 */
+            margin-left: 66px;
+            margin-top: 21px; 
+            text-align: center;   /* 用于设置子元素文本居中 */
+            opacity: 0.7;
+            clip-path: polygon(0% 0,100% 52%,50% 77%,0 100%); /* 剪切图片为三角形*/
+        }
+        /* 图片样式 end */
+
+        /* 设置描述文字样式效果 start */
+        #des-mask{
+            position: relative;
+            top: -50px;
+            left: -1px;
+            /* opacity: 0; */
+            color: white;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 15px;
+            transition: transform 0.6s ease;
+
+      
+        }
+        #nav > ul > li:hover  #des-mask{
+            opacity: 1;
+            /* 增加元素的大小*/
+            -webkit-transform: scale(1.1, 1.1);
+            /* Safari */
+            -ms-transform: scale(1.1, 1.1);
+            /* IE 9 */
+            transform: scale(1.1, 1.1);
+        }
+        /* 设置描述文字样式效果 end */
+	
+	
+	</style>
+</head>
+<body>
+    
+    <h2 id="title">英语学习youtuber</h2>
+    <div id="nav">
+        <ul>
+            <li>
+                <a href="https://www.youtube.com/c/ArnelsEverydayEnglish">
+                    <img src="https://yt3.ggpht.com/ytc/AAUvwngtxI76iIehydPG3SwppzGk0rOYX0hJwhZ-td3e=s176-c-k-c0x00ffffff-no-rj" alt="">
+                    <span id="des-mask">Arnel's Everyday English</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/c/ArnelsEverydayEnglish">
+                    <img src="https://yt3.ggpht.com/ytc/AAUvwngtxI76iIehydPG3SwppzGk0rOYX0hJwhZ-td3e=s176-c-k-c0x00ffffff-no-rj" alt="">
+                    <span id="des-mask">Arnel's Everyday English</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <h2 id="title">知识类youtuber</h2>
+    <div id="nav">
+        <ul>
+            <li>
+                <a  href="https://www.youtube.com/channel/UCIwjCmxTj7TFGFU0xkuIm6A" >
+                    <img src="https://yt3.ggpht.com/ytc/AKedOLS2M14k2WRwfR9CxvpzZ05q6fA_ezEcUAws0wZo8A=s176-c-k-c0x00ffffff-no-rj" alt="">
+                    <span id="des-mask">金手指。成長學院</span>
+                </a>
+            </li>
+            <li>
+                <a  href="https://www.youtube.com/channel/UCIwjCmxTj7TFGFU0xkuIm6A" >
+                    <img src="https://yt3.ggpht.com/ytc/AKedOLS2M14k2WRwfR9CxvpzZ05q6fA_ezEcUAws0wZo8A=s176-c-k-c0x00ffffff-no-rj" alt="">
+                    <span id="des-mask">金手指。成長學院</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

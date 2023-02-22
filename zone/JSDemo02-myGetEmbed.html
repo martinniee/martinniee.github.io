@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		 <title>JSDemo02-获嵌入标签embed和iframe</title>
+		 
+		<style>
+			#inputGetUrl::placeholder{
+				color:rgb(0, 170, 127);
+			}
+			input[type=text], select {
+				width: 50%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				display: inline-block;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				box-sizing: border-box;
+			}
+			button{
+				border: 1px solid green;
+				border-radius: 8px;
+				padding: 3px 8px;
+				background: #1d5be49e;
+				color: white;
+			}
+			button:hover{
+				border: 1px solid green;
+				border-radius: 8px;
+				padding: 3px 8px;
+				background: #0f3fa99e;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="embedDemo" >
+			<input type="text" id="inputGetUrl" name="firstname" value="" placeholder="Please input a web URL">
+			<button type="button" onclick=" MyGetEmbed() " >Click Me to obtain embed tag!</button>
+			<button type="button" onclick=" MyGetIframe() " >Click Me to obtain iframe tag!</button>
+		</div>
+		 <script>
+			// 函数: 根据输入的URL获取对应的embed标签
+			// <embed src="https://mm.edrawsoft.cn/template/334" width="100%" height="500px">
+			function MyGetEmbed(){
+				// 获取Input表单输入URL
+				var myURL = document.getElementById("inputGetUrl");
+				// 获取input表单的内容
+				var inputUrl =  myURL.value;
+				// 获取embed标签的字符串形式
+				var str_embed = '<embed src="' + inputUrl + '" width="100%" height="500px">';
+				// 创建markdown格式表示代码块
+				var str_CodeInmarkdown = "```html" + "<br/>" + html2Escape(str_embed) + "<br/>" + "```" ;
+				//创建embed标签的父标签   对象
+				var  MyDiv = document.getElementById("embedDemo")
+				// 加入embed标签嵌入格式 到 div中
+				MyDiv.innerHTML +=str_embed;
+				//追加 markdown格式表示代码块 到 div
+				MyDiv.innerHTML +=str_CodeInmarkdown;
+			}
+			// 函数: 根据输入的URL获取对应的iframe标签
+			// <embed src="https://mm.edrawsoft.cn/template/334" width="100%" height="500px">
+			function MyGetIframe(){
+				// 获取Input表单输入URL
+				var myURL = document.getElementById("inputGetUrl");
+				// 获取input表单的内容
+				var inputUrl =  myURL.value;
+				// 获取iframe标签的字符串形式
+				var str_iframe = '<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500px" src="' + inputUrl + '" ></iframe>';
+				// 创建markdown格式表示代码块
+				var str_CodeInmarkdown = "```html" + "<br/>" + html2Escape(str_iframe) + "<br/>" + "```" ;
+				//创建iframe标签的父标签   对象
+				var  MyDiv = document.getElementById("embedDemo")
+				// 加入iframe标签嵌入格式 到 div中
+				MyDiv.innerHTML +=str_iframe;
+				//追加 markdown格式表示代码块 到 div
+				MyDiv.innerHTML +=str_CodeInmarkdown;
+			}
+			// 函数； HTML标签转义（< -> &lt;）
+			function html2Escape(sHtml) {
+				return sHtml.replace(/[<>&"]/g,function(c){
+						return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];
+				});
+			}       
+		</script>
+	<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

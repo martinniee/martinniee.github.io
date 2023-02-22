@@ -1,0 +1,138 @@
+
+/* 
+=========博客文章中的图片样式============
+*/
+.post-content img {
+  position: relative !important;
+  top: 0px !important;
+  border-radius: 12px;
+  transition: box-shadow, top 0.7s;
+}
+
+
+/* 设置图片悬浮效果 */
+#article-container .fancybox img:hover {
+  box-shadow: -1px 2px 8px #aba7a794 !important;
+  top: -6px !important;
+  border-radius: 12px;
+}
+
+#article-container .fancybox img {
+   /* 使 .fancybox下的img水平居中 */
+  margin: 16px auto !important;
+/* 设置图片占比大小 */
+  width: 80%;
+}
+
+/* 
+=========博客文章中的超链接样式============
+*/
+
+.post-content a:link, a:visited {
+ text-decoration: underline !important;
+
+}
+
+/* 
+=========博客mindmap插件css样式============
+*/
+  blockquote.pullquote {
+  position: relative;
+  max-width: 100%;
+  font-size: 110%;
+}
+/* 强制隐藏多渲染出来的导图 */
+#kity_svg_24{
+  cursor: -webkit-grab;
+  display: none !important;  
+}
+/* 
+=========markdown键盘样式============
+*/
+#article-container kbd{
+  background: #f3f3f3;
+  border-radius: 11%;
+  padding: 2px 9px;
+  margin: 0 6px;
+  font-weight: bold;
+  font-family: serif;
+  border: solid 1px #c5c5c5;
+}
+/* 
+=========修改默认单行code样式============
+*/
+/* article-container */
+.post-content code {
+  color: rgb(220 15 15) !important;
+  font-size: 13px;
+  background-color: #ffffff !important;
+  margin: auto 3px;
+  border-radius: 10px;
+  display: inline-block;
+  font-weight: bold;
+}
+/* 
+=========文章markdown复制按钮样式============
+*/
+#get-btn{
+  outline: 0;
+  background: #ffffff;
+  background-color: #44c767;
+  border-radius: 28px;
+  border: 1px solid #18ab29;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Times New Roman;
+  font-size: 16px;
+  padding: 3px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
+
+}
+#get-btn:hover {
+	background-color:#5cbf2a;
+}
+#get-btn:active {
+	position:relative;
+	top:1px;
+}
+/* 
+=========icon 通用样式 ============
+*/
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+/* 
+=========details样式 ============
+*/
+details{
+  width: 100%;
+  max-height: 460px;
+  border: 1px solid #222;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0 0 8px rgba(43, 47, 62, 0.1);
+  transition: 1s all ease;
+}
+
+/* summary样式  */
+summary{
+  border: 2px solid #222;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 5px;
+  font-size: 28px;
+  letter-spacing: 1px;
+  font-family: "Balthazar", serif;
+  font-weight: 400;
+  cursor: pointer;
+  outline: none;
+  transition: 1s all ease;
+}
